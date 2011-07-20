@@ -30,6 +30,8 @@ manually submit errors to airbreak.
 var airbreak = require('airbrake').createClient("your api key", "your environment");
 var err = new Error('Something went terribly wrong');
 airbrake.notify(err, function(err) {
+  if (err) throw err;
+
   // Error has been delivered
 });
 ```
