@@ -1,12 +1,34 @@
 var common = require('../common');
 var airbrake = require(common.dir.root).createClient()
-//var sinon = require('sinon');
 var assert = require('assert');
 var xmlbuilder = require('xmlbuilder');
+var os = require('os');
 
 (function testCgiDataFromProcessEnv() {
   var err = new Error();
   var cgiData = airbrake.cgiDataVars(err);
+
+  assert.equal(cgiData['process.pid'], process.pid);
+  assert.equal(cgiData['process.uid'], process.getuid());
+  assert.equal(cgiData['process.gid'], process.getgid());
+  assert.equal(cgiData['process.cwd'], process.cwd());
+  assert.equal(cgiData['process.execPath'], process.execPath);
+  assert.equal(cgiData['process.version'], process.version);
+  assert.equal(cgiData['process.argv'], process.argv);
+  assert.ok(cgiData['process.memoryUsage'].rss);
+  assert.equal(cgiData['os.loadavg'].length, 3);
+  assert.equal(typeof cgiData['os.uptime'], 'number');
+  delete cgiData['process.pid'];
+  delete cgiData['process.uid'];
+  delete cgiData['process.gid'];
+  delete cgiData['process.cwd'];
+  delete cgiData['process.execPath'];
+  delete cgiData['process.version'];
+  delete cgiData['process.memoryUsage'];
+  delete cgiData['process.argv'];
+  delete cgiData['os.loadavg'];
+  delete cgiData['os.uptime'];
+
   assert.deepEqual(cgiData, process.env);
   assert.notStrictEqual(cgiData, process.env);
 })();
