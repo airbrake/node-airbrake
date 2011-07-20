@@ -3,9 +3,10 @@ var airbrake = require(common.dir.root).createClient(common.key, common.env)
 var sinon = require('sinon');
 var assert = require('assert');
 
-var err = new Error('test-notify');
+var err = new Error('Node.js just totally exploded on me');
 err.env = {protect: 'the environment!'};
 err.session = {iKnow: 'what you did last minute'};
+err.url = 'http://example.org/bad-url';
 
 var circular = {};
 circular.circular = circular;
