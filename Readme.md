@@ -52,6 +52,7 @@ This screenshot shows an airbrake error send from this module:
 * Support for [long-stack-traces][]
 * Optional auto-handler for `uncaughtException` events
 * Provides notification url linking to airbrake in `notify()` callback
+* Timeout airbrake requests after 30 seconds, you never know
 
 [long-stack-traces]: https://github.com/tlrobinson/long-stack-traces
 
@@ -143,6 +144,10 @@ The version of this app. Set to a semantic version number, or leave unset.
 ### airbrake.protocol = 'http'
 
 The protocol to use.
+
+### airbrake.timeout = 30 * 1000
+
+The timeout after which to give up trying to notify airbrake in ms.
 
 ### airbrake.handleExceptions()
 
