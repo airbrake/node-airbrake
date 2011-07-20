@@ -7,7 +7,9 @@ Node.js client for [airbrakeapp.com][], formerly known as [hoptoad][].
 
 ## Install
 
-Not ready for you yet.
+``` bash
+npm install airbrake
+```
 
 ## Basic usage
 
