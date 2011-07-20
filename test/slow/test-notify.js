@@ -21,8 +21,12 @@ airbrake.notify(err, spy);
 
 process.on('exit', function() {
   assert.ok(spy.called);
+
   var err = spy.args[0][0];
   if (err) {
     throw err;
   }
+
+  var url = spy.args[0][1];
+  assert.ok(/^http:\/\//.test(url));
 });
