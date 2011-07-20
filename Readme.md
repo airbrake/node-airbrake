@@ -80,4 +80,21 @@ requests, so you should still try to handle errors where they occur.
 
 [stack-trace]: https://github.com/felixge/node-stack-trace
 
+## Removing context from errors
+
+In some scenarios you might want to filter some context to never show up in
+Airbrake. For example you might have a private key loaded in your environment
+memory, or your user has some critical data in his session, and you want to
+hide that.
+
+This can be done by hooking into the `'vars'` event like so:
+
+``` javascript
+airbrake.on('vars', function(type, vars) {
+  if (type === 'cgi-data') {
+    delete vars.SECRET;
+  }
+});
+```
+
 ## API

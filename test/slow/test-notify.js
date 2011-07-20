@@ -12,6 +12,10 @@ circular.circular = circular;
 
 err.params = {some: 'params', circular: circular};
 
+airbrake.on('vars', function(type, vars) {
+  delete vars.SECRET;
+});
+
 var spy = sinon.spy();
 airbrake.notify(err, spy);
 
