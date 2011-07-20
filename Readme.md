@@ -19,10 +19,10 @@ throw new Error('I am an uncaught exception');
 ```
 
 Please note that the above will re-throw the exception after it has been
-successfully delivered to hoptoad, caushing your process to exit with status 1.
+successfully delivered to airbreak, caushing your process to exit with status 1.
 
 If you want more control over the delivery of your errors, you can also
-manually submit errors to Hoptoad.
+manually submit errors to airbreak.
 
 ``` javascript
 var airbreak = require('airbrake').createClient("your api key", "your environment");
