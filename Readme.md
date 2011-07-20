@@ -41,19 +41,19 @@ airbrake.notify(err, function(err) {
 The `notify()` method automatically adds the following context information to
 each delivered error:
 
-* **error.class:** (`err.type` if set, or `'Error'`)
-* **error.message:** (`err.message`)
+* **error.class:** (`err.type` string if set, or `'Error'`)
+* **error.message:** (`err.message` string)
 * **error.backtrace:** (`err.stack` as parsed by [stack-trace][])
-* **request.url:** (`err.url` if set);
-* **request.component:** (`err.component` if set);
-* **request.action:** (`err.action` if set);
-* **request.cgi-data:** (`process.env`, merged with `err.env` if set)
-* **request.params:** (`err.params` if set)
-* **request.session:** (`err.session` if set)
-* **server-environment.project-root:** (`airbreak.projectRoot`, if set)
-* **server-environment.environment-name:** (`airbreak.env`, defaults to `process.env.NODE_ENV`)
-* **server-environment.app-version:** (`airbreak.appVersion`, if set)
-* **server-environment.hostname:** (`airbreak.hostname`, if set)
+* **request.url:** (`err.url` string if set);
+* **request.component:** (`err.component` string if set);
+* **request.action:** (`err.action` string if set);
+* **request.cgi-data:** (`process.env`, merged with `err.env` object if set)
+* **request.params:** (`err.params` object if set)
+* **request.session:** (`err.session` object if set)
+* **server-environment.project-root:** (`airbreak.projectRoot` string if set)
+* **server-environment.environment-name:** (`airbreak.env` string, defaults to `process.env.NODE_ENV`)
+* **server-environment.app-version:** (`airbreak.appVersion string if set)
+* **server-environment.hostname:** (`airbreak.hostname` string if set)
 
 You can add additional context information by modifying the error properties
 listed above:
