@@ -8,13 +8,13 @@ Node.js client for [airbrakeapp.com][], formerly hoptoad.
 
 Not ready for you yet.
 
-## Usage
+## Basic usage
 
 The common use case for this module is to catch all `'uncaughtException'`
 events on the `process` object and send them to airbreak:
 
 ``` javascript
-var airbreak = require('airbrake').createClient("your api key", "your environment");
+var airbreak = require('airbrake').createClient("your api key");
 airbrake.handleExceptions();
 
 throw new Error('I am an uncaught exception');
@@ -27,7 +27,7 @@ If you want more control over the delivery of your errors, you can also
 manually submit errors to airbreak.
 
 ``` javascript
-var airbreak = require('airbrake').createClient("your api key", "your environment");
+var airbreak = require('airbrake').createClient("your api key");
 var err = new Error('Something went terribly wrong');
 airbrake.notify(err, function(err) {
   if (err) throw err;
@@ -36,4 +36,43 @@ airbrake.notify(err, function(err) {
 });
 ```
 
-WIP
+## Adding context to errors
+
+In addition to the stack trace, the following information is attached when
+using the `notify()` method:
+
+* **error.class:** (`err.type` if set, or `'Error'`)
+* **error.message:** (`err.message`)
+* **error.backtrace:** (`err.stack` as parsed by [stack-trace][])
+* **request.url:** (`err.url` if set);
+* **request.component:** (`err.component` if set);
+* **request.action:** (`err.action` if set);
+* **request.cgi-data:** (`process.env`, and `err.env` if set)
+* **server-environment:** (`airbreak.env`, defaults to `process.env.NODE\_ENV`)
+
+You can add additional context information by modifying the error properties
+listed above:
+
+``` javascript
+var airbreak = require('airbrake').createClient("your api key");
+var http = require('http');
+
+http.createServer(function(req, res) {
+  if (req.headers['X-Secret'] !== 'my secret') {
+    var err = new Error('403 - Permission denied');
+    req.writeHead(403);
+    req.end(err.message);
+
+    err.url = req.url;
+    err.params = {ip: req.socket.remoteAddress};
+    airbrake.notify(err):
+  }
+});
+```
+
+Unfortunately `uncaughtException` events cannot be traced back to particular
+requests, so you should still try to handle errors where they occur.
+
+[stack-trace]: https://github.com/felixge/node-stack-trace
+
+## API
