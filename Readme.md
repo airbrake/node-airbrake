@@ -39,6 +39,8 @@ airbrake.notify(err, function(err, url) {
 });
 ```
 
+![screenshot](https://github.com/felixge/node-airbrake/raw/master/screenshot.png)
+
 ## Adding context to errors
 
 The `notify()` method automatically adds the following context information to
