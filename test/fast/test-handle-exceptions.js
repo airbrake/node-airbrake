@@ -6,6 +6,7 @@ var sinon = require('sinon');
 (function testNotifyForUnhandledExceptions() {
   sinon.stub(process, 'on');
   sinon.stub(airbrake, 'notify');
+  sinon.stub(airbrake, 'log');
 
   airbrake.handleExceptions();
 
@@ -20,6 +21,10 @@ var sinon = require('sinon');
   handler(err);
 
   assert.ok(airbrake.notify.calledWith(err));
+  assert.ok(airbrake.log.calledWith('Airbrake: Uncaught Exception:'));
+  assert.ok(airbrake.log.calledWith(err.stack));
+
+  airbrake.log.restore();
 
   var notifyCb = airbrake.notify.args[0][1];
 
@@ -29,8 +34,7 @@ var sinon = require('sinon');
 
     notifyCb();
 
-    assert.ok(/uncaught exception: airbreak was notified/i.test(airbrake.log.args[0][0]));
-    assert.strictEqual(airbrake.log.args[1][0], err.stack);
+    assert.ok(/notified service/i.test(airbrake.log.args[0][0]));
     assert.ok(process.exit.calledWith(1));
 
     process.exit.restore();
@@ -44,9 +48,8 @@ var sinon = require('sinon');
 
     notifyCb(notifyErr);
 
-    assert.ok(/uncaught exception: could not notify airbreak/i.test(airbrake.log.args[0][0]));
+    assert.ok(/could not notify service/i.test(airbrake.log.args[0][0]));
     assert.strictEqual(airbrake.log.args[1][0], notifyErr.stack);
-    assert.strictEqual(airbrake.log.args[2][0], err.stack);
     assert.ok(process.exit.calledWith(1));
 
     process.exit.restore();
