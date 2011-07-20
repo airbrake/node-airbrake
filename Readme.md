@@ -47,10 +47,13 @@ each delivered error:
 * **request.url:** (`err.url` if set);
 * **request.component:** (`err.component` if set);
 * **request.action:** (`err.action` if set);
-* **request.cgi-data:** (`process.env`, and `err.env` if set)
+* **request.cgi-data:** (`process.env`, merged with `err.env` if set)
 * **request.params:** (`err.params` if set)
 * **request.session:** (`err.session` if set)
-* **server-environment:** (`airbreak.env`, defaults to `process.env.NODE_ENV`)
+* **server-environment.project-root:** (`airbreak.projectRoot`, if set)
+* **server-environment.environment-name:** (`airbreak.env`, defaults to `process.env.NODE_ENV`)
+* **server-environment.app-version:** (`airbreak.appVersion`, if set)
+* **server-environment.hostname:** (`airbreak.hostname`, if set)
 
 You can add additional context information by modifying the error properties
 listed above:

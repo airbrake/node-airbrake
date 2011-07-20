@@ -1,3 +1,4 @@
 * Timeout
 * Long stack traces
 * Custom environment
+* Deep clone

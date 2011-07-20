@@ -1,13 +1,12 @@
-var common = require('./common');
+var common = require('../common');
 var airbrake = require(common.dir.root).createClient(common.key, common.env)
 var sinon = require('sinon');
 var assert = require('assert');
 
-var err = new Error('test-notify');
+var err = new Error('A total different error');
 
-err.url = 'super';
-err.action = 'hot_action';
-err.component = 'coolio';
+airbrake.projectRoot = __dirname;
+airbrake.appVersion = '1.0.0.';
 
 var spy = sinon.spy();
 airbrake.notify(err, spy);
