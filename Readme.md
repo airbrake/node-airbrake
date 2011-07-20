@@ -48,12 +48,14 @@ This screenshot shows an airbrake error send from this module:
 ## Features
 
 * Detect and fix circular references in error context information
-* Support for all features of the 2.1 notification API
+* Support for all features of the [2.1 notification API][2.1api]
 * Support for [long-stack-traces][]
 * Optional auto-handler for `uncaughtException` events
 * Provides notification url linking to airbrake in `notify()` callback
 
 [long-stack-traces]: https://github.com/tlrobinson/long-stack-traces
+
+[2.1api]: http://help.airbrakeapp.com/kb/api-2/notifier-api-version-21
 
 ## Adding context to errors
 
@@ -162,7 +164,7 @@ is done to avoid silent error delivery failure.
 ## Alternative modules
 
 This module is meant as a replacement for [hoptoad-notifier][], which does not
-support all features of the 2.1 API.
+support all features of the [2.1 API][2.1api].
 
 [hoptoad-notifier]: https://github.com/tristandunn/node-hoptoad-notifier
 
