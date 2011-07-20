@@ -67,7 +67,7 @@ each delivered error:
 * **error.class:** (`err.type` string if set, or `'Error'`)
 * **error.message:** (`err.message` string)
 * **error.backtrace:** (`err.stack` as parsed by [stack-trace][])
-* **request.url:** (`err.url` string if set);
+* **request.url:** (`err.url`, see `airbrake.url`);
 * **request.component:** (`err.component` string if set);
 * **request.action:** (`err.action` string if set);
 * **request.cgi-data:** (`process.env`, merged with `err.env` object if set)
@@ -133,6 +133,12 @@ The API key to use.
 ### airbrake.env = process.env.NODE_ENV;
 
 The name of the server environment this is running in.
+
+### airbrake.url = 'http://' + os.hostname()
+
+The base url for errors. If `err.url` is not set, `airbrake.url` is used
+instead. If `err.url` is a relative url starting with `'/'`, it is appended
+to `airbrake.url`. If `err.url` is an absolute url, `airbrake.url` is ignored.
 
 ### airbrake.projectRoot = null
 

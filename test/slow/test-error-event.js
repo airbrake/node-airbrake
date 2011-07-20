@@ -10,7 +10,7 @@ var server = http.createServer(function(req, res) {
 
 server.listen(common.port, function() {
   var err = new Error('test-notify');
-  airbrake.host = 'localhost:' + common.port;
+  airbrake.serviceHost = 'localhost:' + common.port;
 
   airbrake.on('error', function(err) {
     assert.ok(/notification failed/i.test(err.message));
