@@ -3,10 +3,14 @@ var airbrake = require(common.dir.root).createClient(common.key, common.env)
 var sinon = require('sinon');
 var assert = require('assert');
 
-var err = new Error('A total different error');
+var err = new Error('test-notify');
+err.env = {protect: 'the environment!'};
+err.session = {iKnow: 'what you did last minute'};
 
-airbrake.projectRoot = __dirname;
-airbrake.appVersion = '1.0.0.';
+var circular = {};
+circular.circular = circular;
+
+err.params = {some: 'params', circular: circular};
 
 var spy = sinon.spy();
 airbrake.notify(err, spy);

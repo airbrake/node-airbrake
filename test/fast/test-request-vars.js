@@ -2,6 +2,7 @@ var common = require('../common');
 var airbrake = require(common.dir.root).createClient()
 //var sinon = require('sinon');
 var assert = require('assert');
+var xmlbuilder = require('xmlbuilder');
 
 (function testCgiDataFromProcessEnv() {
   var err = new Error();
@@ -41,4 +42,13 @@ var assert = require('assert');
 
   var params = airbrake.paramsVars(err);
   assert.deepEqual(params, err.params);
+})();
+
+(function testCircularVars() {
+  var vars = {foo: 'bar', circular: {}};
+  vars.circular.self = vars.circular;
+
+  // test that no exception is thrown
+  var request = xmlbuilder().begin('request');
+  airbrake.addRequestVars(request, 'params', vars);
 })();
