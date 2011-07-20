@@ -1,9 +1,9 @@
 # airbrake
 
-Node.js client for [airbrakeapp.com][], formerly known as [hoptoad][].
+Node.js client for [airbrakeapp.com][], formerly known as [hoptoad.com][].
 
 [airbrakeapp.com]: http://airbrakeapp.com/
-[hoptoad]: http://robots.thoughtbot.com/post/7665411707/hoptoad-is-now-airbrake
+[hoptoad.com]: http://robots.thoughtbot.com/post/7665411707/hoptoad-is-now-airbrake
 
 ## Install
 
