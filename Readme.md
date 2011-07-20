@@ -29,10 +29,10 @@ manually submit errors to airbreak.
 ``` javascript
 var airbreak = require('airbrake').createClient("your api key");
 var err = new Error('Something went terribly wrong');
-airbrake.notify(err, function(err) {
+airbrake.notify(err, function(err, url) {
   if (err) throw err;
 
-  // Error has been delivered
+  // Error has been delivered, url links to the error in airbreak
 });
 ```
 
@@ -98,3 +98,48 @@ airbrake.on('vars', function(type, vars) {
 ```
 
 ## API
+
+### Airbreak.createClient(apiKey, [env])
+
+Returns a new Airbrake instance.
+
+### airbrake.key = null
+
+The API key to use.
+
+### airbrake.env = process.env.NODE_ENV;
+
+The name of the server environment this is running in.
+
+### airbrake.projectRoot = null
+
+The root directory of this project.
+
+### airbrake.appVersion = null
+
+The version of this app. Set to a semantic version number, or leave unset.
+
+### airbrake.protocol = 'http'
+
+The protocol to use.
+
+### airbrake.handleExceptions()
+
+Registers a `process.on('uncaughtException')` listener. When an uncaught
+exception occurs, the error is send to airbrake, and then re-thrown to
+kill the process.
+
+### airbrake.notify(err, [cb])
+
+Sends the given `err` to airbrake.
+
+The callback parameter receives two arguments, `err, url`. `err` is set if
+the delivery to airbrake failed.
+
+If no `cb` is given, and the delivery fails, an `error` event is emitted. If
+there is no listener for this event, node will kill the process as well. This
+is done to avoid silent error delivery failure.
+
+## License
+
+airbrake is licensed under the MIT license.
