@@ -140,6 +140,10 @@ If no `cb` is given, and the delivery fails, an `error` event is emitted. If
 there is no listener for this event, node will kill the process as well. This
 is done to avoid silent error delivery failure.
 
+## Todo
+
+* Implement `airbrake.deployment()`
+
 ## License
 
 airbrake is licensed under the MIT license.
