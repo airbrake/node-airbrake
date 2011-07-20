@@ -48,7 +48,9 @@ each delivered error:
 * **request.component:** (`err.component` if set);
 * **request.action:** (`err.action` if set);
 * **request.cgi-data:** (`process.env`, and `err.env` if set)
-* **server-environment:** (`airbreak.env`, defaults to `process.env.NODE\_ENV`)
+* **request.params:** (`err.params` if set)
+* **request.session:** (`err.session` if set)
+* **server-environment:** (`airbreak.env`, defaults to `process.env.NODE_ENV`)
 
 You can add additional context information by modifying the error properties
 listed above:
