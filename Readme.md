@@ -38,8 +38,8 @@ airbrake.notify(err, function(err) {
 
 ## Adding context to errors
 
-In addition to the stack trace, the following information is attached when
-using the `notify()` method:
+The `notify()` method automatically adds the following context information to
+each delivered error:
 
 * **error.class:** (`err.type` if set, or `'Error'`)
 * **error.message:** (`err.message`)
