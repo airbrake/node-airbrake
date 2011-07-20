@@ -1,6 +1,8 @@
 # airbrake
 
-Node.js client for [airbrakeapp.com](), formerly hoptoad.
+Node.js client for [airbrakeapp.com][], formerly hoptoad.
+
+[airbrakeapp.com]: http://airbrakeapp.com/
 
 ## Install
 
