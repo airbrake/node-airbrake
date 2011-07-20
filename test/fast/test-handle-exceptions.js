@@ -21,7 +21,7 @@ var sinon = require('sinon');
   handler(err);
 
   assert.ok(airbrake.notify.calledWith(err));
-  assert.ok(airbrake.log.calledWith('Airbrake: Uncaught Exception:'));
+  assert.ok(airbrake.log.calledWith('Airbrake: Uncaught exception, sending notification for:'));
   assert.ok(airbrake.log.calledWith(err.stack));
 
   airbrake.log.restore();
