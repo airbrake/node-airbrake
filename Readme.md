@@ -70,7 +70,7 @@ each delivered error:
 * **request.url:** (`err.url`, see `airbrake.url`);
 * **request.component:** (`err.component` string if set);
 * **request.action:** (`err.action` string if set);
-* **request.cgi-data:** (`process.env`, merged with `err.env` object if set)
+* **request.cgi-data:** (`process.env`, merged all other properties of `err`)
 * **request.params:** (`err.params` object if set)
 * **request.session:** (`err.session` object if set)
 * **server-environment.project-root:** (`airbreak.projectRoot` string if set)

@@ -11,21 +11,12 @@ var xmlbuilder = require('xmlbuilder');
   assert.notStrictEqual(cgiData, process.env);
 })();
 
-(function testAddErrorEnv() {
+(function testCustomErrorProperties() {
   var err = new Error();
-  err.env = {anEnvironmentPropertyTest: 'bar'};
+  err.myKey = 'some value';
 
   var cgiData = airbrake.cgiDataVars(err);
-  assert.strictEqual(cgiData.anEnvironmentPropertyTest, 'bar');
-  assert.strictEqual(Object.keys(cgiData).length, Object.keys(process.env).length + 1);
-})();
-
-(function testBadErrorEnv() {
-  var err = new Error();
-  err.env = true;
-
-  var cgiData = airbrake.cgiDataVars(err);
-  assert.deepEqual(cgiData, process.env);
+  assert.equal(cgiData['err.myKey'], err.myKey);
 })();
 
 (function testSessionVars() {
