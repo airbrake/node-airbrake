@@ -39,7 +39,21 @@ airbrake.notify(err, function(err, url) {
 });
 ```
 
+## Screenshot
+
+This screenshot shows an airbrake error send from this module:
+
 ![screenshot](https://github.com/felixge/node-airbrake/raw/master/screenshot.png)
+
+## Features
+
+* Detect and fix circular references in error context information
+* Support for all features of the 2.1 notification API
+* Support for [long-stack-traces][]
+* Optional auto-handler for `uncaughtException` events
+* Provides notification url linking to airbrake in `notify()` callback
+
+[long-stack-traces]: https://github.com/tlrobinson/long-stack-traces
 
 ## Adding context to errors
 
@@ -144,6 +158,13 @@ the delivery to airbrake failed.
 If no `cb` is given, and the delivery fails, an `error` event is emitted. If
 there is no listener for this event, node will kill the process as well. This
 is done to avoid silent error delivery failure.
+
+## Alternative modules
+
+This module is meant as a replacement for [hoptoad-notifier][], which does not
+support all features of the 2.1 API.
+
+[hoptoad-notifier]: https://github.com/tristandunn/node-hoptoad-notifier
 
 ## Todo
 
