@@ -15,7 +15,7 @@
   "dependencies": {
     "request": "1.9.8",
     "xmlbuilder": "https://github.com/felixge/xmlbuilder-js/tarball/4303eb2650a4b819a980b1dc9d2965862a1e9faf",
-    "stack-trace": "0.0.4",
+    "stack-trace": "0.0.5",
     "traverse": "0.4.4"
   },
   "devDependencies": {
