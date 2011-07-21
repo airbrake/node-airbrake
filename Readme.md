@@ -130,7 +130,7 @@ Returns a new Airbrake instance.
 
 The API key to use.
 
-### airbrake.env = process.env.NODE_ENV || 'development';
+### airbrake.env = process.env.NODE_ENV || 'development'
 
 The name of the server environment this is running in.
 
