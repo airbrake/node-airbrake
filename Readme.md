@@ -74,7 +74,7 @@ each delivered error:
 * **request.params:** (`err.params` object if set)
 * **request.session:** (`err.session` object if set)
 * **server-environment.project-root:** (`airbreak.projectRoot` string if set)
-* **server-environment.environment-name:** (`airbreak.env` string, defaults to `process.env.NODE_ENV`)
+* **server-environment.environment-name:** (`airbreak.env` string)
 * **server-environment.app-version:** (`airbreak.appVersion string if set)
 * **server-environment.hostname:** (`airbreak.hostname` string if set)
 
@@ -130,7 +130,7 @@ Returns a new Airbrake instance.
 
 The API key to use.
 
-### airbrake.env = process.env.NODE_ENV;
+### airbrake.env = process.env.NODE_ENV || 'development';
 
 The name of the server environment this is running in.
 
