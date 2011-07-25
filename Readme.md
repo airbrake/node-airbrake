@@ -14,28 +14,28 @@ npm install airbrake
 ## Basic usage
 
 The common use case for this module is to catch all `'uncaughtException'`
-events on the `process` object and send them to airbreak:
+events on the `process` object and send them to airbrake:
 
 ``` javascript
-var airbreak = require('airbrake').createClient("your api key");
+var airbrake = require('airbrake').createClient("your api key");
 airbrake.handleExceptions();
 
 throw new Error('I am an uncaught exception');
 ```
 
 Please note that the above will re-throw the exception after it has been
-successfully delivered to airbreak, caushing your process to exit with status 1.
+successfully delivered to airbrake, caushing your process to exit with status 1.
 
 If you want more control over the delivery of your errors, you can also
-manually submit errors to airbreak.
+manually submit errors to airbrake.
 
 ``` javascript
-var airbreak = require('airbrake').createClient("your api key");
+var airbrake = require('airbrake').createClient("your api key");
 var err = new Error('Something went terribly wrong');
 airbrake.notify(err, function(err, url) {
   if (err) throw err;
 
-  // Error has been delivered, url links to the error in airbreak
+  // Error has been delivered, url links to the error in airbrake
 });
 ```
 
@@ -73,16 +73,16 @@ each delivered error:
 * **request.cgi-data:** (`process.env`, merged all other properties of `err`)
 * **request.params:** (`err.params` object if set)
 * **request.session:** (`err.session` object if set)
-* **server-environment.project-root:** (`airbreak.projectRoot` string if set)
-* **server-environment.environment-name:** (`airbreak.env` string)
-* **server-environment.app-version:** (`airbreak.appVersion string if set)
-* **server-environment.hostname:** (`airbreak.hostname` string if set)
+* **server-environment.project-root:** (`airbrake.projectRoot` string if set)
+* **server-environment.environment-name:** (`airbrake.env` string)
+* **server-environment.app-version:** (`airbrake.appVersion string if set)
+* **server-environment.hostname:** (`airbrake.hostname` string if set)
 
 You can add additional context information by modifying the error properties
 listed above:
 
 ``` javascript
-var airbreak = require('airbrake').createClient("your api key");
+var airbrake = require('airbrake').createClient("your api key");
 var http = require('http');
 
 http.createServer(function(req, res) {
