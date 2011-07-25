@@ -215,6 +215,18 @@ support all features of the [2.1 API][2.1api].
 
 [hoptoad-notifier]: https://github.com/tristandunn/node-hoptoad-notifier
 
+## Contribute
+
+Besides bug fixes, I'd be happy to accept patches for:
+
+* Automatically parsing `repo` and `rev` from the local git repository when
+  calling `airbrake.trackDeployment()`. This can be done via `exec()`, but must
+  not be done when specifying `repo` / `rev` by hand, or if they are set to
+  `false`.
+
+If you have other feature ideas, please open an issue first, so we can discuss
+it.
+
 ## License
 
 airbrake is licensed under the MIT license.
