@@ -120,6 +120,31 @@ airbrake.on('vars', function(type, vars) {
 });
 ```
 
+## Tracking deployments
+
+This client supports airbrake's [deployment tracking][]:
+
+``` javascript
+var airbrake = require('airbrake').createClient("your api key");
+var deployment = {
+  rev: '98103a8fa850d5eaf3666e419d8a0a93e535b1b2',
+  repo: 'git@github.com:felixge/node-airbrake.git',
+};
+
+airbrake.trackDeployment(deployment, function(err, params) {
+  if (err) {
+    throw err;
+  }
+
+  console.log('Tracked deployment of %s to %s', params.rev, params.env);
+});
+```
+
+Check out the `airbrake.trackDeployment()` API docs below for a list of all
+options.
+
+[deployment tracking]: http://help.airbrakeapp.com/kb/api-2/deploy-tracking
+
 ## API
 
 ### Airbreak.createClient(apiKey, [env])
@@ -173,16 +198,22 @@ If no `cb` is given, and the delivery fails, an `error` event is emitted. If
 there is no listener for this event, node will kill the process as well. This
 is done to avoid silent error delivery failure.
 
+### airbrake.trackDeployment([params, [cb]])
+
+Notifies airbrake about a deployment. `params` is an object with the following
+options:
+
+* `env:` The environment being deployed, defaults to `airbrake.env`.
+* `user:` The user doing the deployment, defaults to `process.env.USER`.
+* `repo:` The github url of this repository. Defaults to `''`.
+* `rev:` The revision of this deployment. Defaults to `''`.
+
 ## Alternative modules
 
 This module is meant as a replacement for [hoptoad-notifier][], which does not
 support all features of the [2.1 API][2.1api].
 
 [hoptoad-notifier]: https://github.com/tristandunn/node-hoptoad-notifier
-
-## Todo
-
-* Implement `airbrake.deployment()`
 
 ## License
 
