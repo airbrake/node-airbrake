@@ -65,3 +65,11 @@ var os = require('os');
   var request = xmlbuilder().begin('request');
   airbrake.addRequestVars(request, 'params', vars);
 })();
+
+(function testAppendErrorXmlWithBadStack() {
+  var notice = xmlbuilder().begin('notice');
+  var err = new Error('oh oh');
+
+  err.stack += '\n    at Array.0 (native)';
+  airbrake.appendErrorXml(notice, err);
+})();
