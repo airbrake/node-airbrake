@@ -159,11 +159,11 @@ The API key to use.
 
 The name of the server environment this is running in.
 
-### airbrake.url = 'http://' + os.hostname()
+### airbrake.host = 'http://' + os.hostname()
 
-The base url for errors. If `err.url` is not set, `airbrake.url` is used
+The base url for errors. If `err.url` is not set, `airbrake.host` is used
 instead. If `err.url` is a relative url starting with `'/'`, it is appended
-to `airbrake.url`. If `err.url` is an absolute url, `airbrake.url` is ignored.
+to `airbrake.host`. If `err.url` is an absolute url, `airbrake.host` is ignored.
 
 ### airbrake.projectRoot = null
 
