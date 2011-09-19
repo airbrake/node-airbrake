@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "request": "1.9.8",
-    "xmlbuilder": "https://github.com/felixge/xmlbuilder-js/tarball/4303eb2650a4b819a980b1dc9d2965862a1e9faf",
+    "xmlbuilder": "0.1.5",
     "stack-trace": "0.0.5",
     "hashish": "0.0.4"
   },

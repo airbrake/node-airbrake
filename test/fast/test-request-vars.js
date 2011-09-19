@@ -62,12 +62,12 @@ var os = require('os');
   vars.circular.self = vars.circular;
 
   // test that no exception is thrown
-  var request = xmlbuilder().begin('request');
+  var request = xmlbuilder.create().begin('request');
   airbrake.addRequestVars(request, 'params', vars);
 })();
 
 (function testAppendErrorXmlWithBadStack() {
-  var notice = xmlbuilder().begin('notice');
+  var notice = xmlbuilder.create().begin('notice');
   var err = new Error('oh oh');
 
   err.stack += '\n    at Array.0 (native)';
