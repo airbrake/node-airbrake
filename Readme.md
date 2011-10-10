@@ -93,7 +93,7 @@ http.createServer(function(req, res) {
 
     err.url = req.url;
     err.params = {ip: req.socket.remoteAddress};
-    airbrake.notify(err):
+    airbrake.notify(err);
   }
 });
 ```
