@@ -73,3 +73,11 @@ var os = require('os');
   err.stack += '\n    at Array.0 (native)';
   airbrake.appendErrorXml(notice, err);
 })();
+
+(function testEmptyErrorMessageDoesNotProduceInvalidXml() {
+  // see: https://github.com/felixge/node-airbrake/issues/15
+  var err = new Error();
+  var xml = airbrake.notifyXml(err, true);
+
+  assert.ok(!/<\/>/.test(xml));
+})();
