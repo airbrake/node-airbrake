@@ -57,7 +57,7 @@ This screenshot shows an airbrake error send from this module:
 
 [long-stack-traces]: https://github.com/tlrobinson/long-stack-traces
 
-[2.1api]: http://help.airbrakeapp.com/kb/api-2/notifier-api-version-21
+[2.1api]: http://help.airbrake.io/kb/api-2/notifier-api-version-21
 
 ## Adding context to errors
 
@@ -143,7 +143,7 @@ airbrake.trackDeployment(deployment, function(err, params) {
 Check out the `airbrake.trackDeployment()` API docs below for a list of all
 options.
 
-[deployment tracking]: http://help.airbrakeapp.com/kb/api-2/deploy-tracking
+[deployment tracking]: http://help.airbrake.io/kb/api-2/deploy-tracking
 
 ## API
 
