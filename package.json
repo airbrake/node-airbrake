@@ -13,7 +13,7 @@
     "node": "*"
   },
   "dependencies": {
-    "request": "1.9.8",
+    "request": "2.9.202",
     "xmlbuilder": "0.1.5",
     "stack-trace": "0.0.5",
     "hashish": "0.0.4"
