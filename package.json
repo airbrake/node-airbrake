@@ -20,7 +20,8 @@
   },
   "devDependencies": {
     "sinon": "1.1.1",
-    "far": "0.0.4"
+    "far": "0.0.4",
+    "express": "2.5.10"
   },
   "optionalDependencies": {}
 }
