@@ -16,24 +16,20 @@ app.listen(common.port);
 app.get('/caught', function(req, res, next) {
   var err = new Error('i am caught!');
   next(err);
-})
+});
 
 app.get('/uncaught', function(req, res, next) {
   var err = new Error('i am uncaught!');
   throw err;
-})
+});
 
 
 process.on('exit', function() {
-  var exitCode = (airbrake.notify.called)
-    ? 0
-    : 1;
-
-  process.reallyExit(exitCode)
+  assert.ok(airbrake.notify.called);
 });
 
 http.request({port: common.port, path: '/caught'}, function() {
   http.request({port: common.port, path: '/uncaught'}, function () {
-    process.exit()
+    process.exit();
   }).end();
 }).end();
