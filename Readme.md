@@ -38,6 +38,16 @@ airbrake.notify(err, function(err, url) {
   // Error has been delivered, url links to the error in airbrake
 });
 ```
+### Usage with Express
+
+A custom error handler will need to be set for Express:
+
+``` javascript
+var airbrake = require('airbrake').createClient("your api key");
+app.error(airbrake.expressHandler())
+```
+
+This has been verified with Express 2.X
 
 ## Screenshot
 
