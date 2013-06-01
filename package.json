@@ -1,7 +1,21 @@
 {
   "author": "Felix Geisendörfer <felix@debuggable.com> (http://debuggable.com/)",
+  "contributors": [
+    "László Bácsi <lackac@lackac.hu> (http://lackac.hu)",
+    "Carlos Brito Lage <carlos@carloslage.net> (http://carloslage.net)",
+    "Stephen Celis <me@stephencelis.com> (http://stephencelis.com)",
+    "Sascha Depold <sascha@depold.com> (http://depold.com)",
+    "Jon Keating <jon@licq.org> (http://www.thejon.org)",
+    "Gabriel Lesperance <gabriel@wavo.me> (http://blog.wavo.me)",
+    "Mathias Pettersson <mape@mape.me> (https://github.com/mape)",
+    "Gary Rafferty <gary.rafferty@gmail.com> (http://www.garyrafferty.com)",
+    "Rob Scott <rob.scott87@gmail.com> (http://lifekraze.com/rob)",
+    "Dylan Smith <Dylan.Smith@shopify.com> (https://github.com/dylanahsmith)",
+    "stefounet <s@fasterize.com> (http://fasterize.com)",
+    "sreuter <s.reuter@geek-it.de> (https://github.com/sreuterairbrake.io"
+  ],
   "name": "airbrake",
-  "description": "Node.js client for airbrakeapp.com, formerly known as hoptoadapp.com.",
+  "description": "Node.js client for airbrake.io",
   "version": "0.3.0",
   "homepage": "https://github.com/felixge/node-airbrake",
   "repository": {
