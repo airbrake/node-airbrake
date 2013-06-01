@@ -4,7 +4,7 @@ var far = require('far').create();
 far.add(__dirname);
 
 var specificTest = process.argv[2]
-if (undefined !== specificTest) {
+if (undefined !== specificTest && 'all' !== specificTest) {
   far.include(new RegExp('test-' + specificTest + '\.js$'));
 } else {
   far.include(/test-.*\.js$/);
