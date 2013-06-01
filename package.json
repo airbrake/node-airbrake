@@ -16,7 +16,7 @@
   ],
   "name": "airbrake",
   "description": "Node.js client for airbrake.io",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "homepage": "https://github.com/felixge/node-airbrake",
   "repository": {
     "type": "git",
@@ -41,5 +41,5 @@
     "express": "~2.5.10"
   },
   "optionalDependencies": {},
-  "license" : "MIT"
+  "license": "MIT"
 }
