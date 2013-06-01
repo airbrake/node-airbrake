@@ -12,6 +12,9 @@
   "engines": {
     "node": "*"
   },
+  "scripts": {
+    "test": "test/run.js"
+  },
   "dependencies": {
     "request": "2.9.202",
     "xmlbuilder": "0.1.5",
