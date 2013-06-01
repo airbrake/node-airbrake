@@ -26,5 +26,6 @@
     "far": "~0.0.4",
     "express": "~2.5.10"
   },
-  "optionalDependencies": {}
+  "optionalDependencies": {},
+  "license" : "MIT"
 }
