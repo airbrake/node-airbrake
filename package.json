@@ -16,15 +16,15 @@
     "test": "test/run.js"
   },
   "dependencies": {
-    "request": "2.9.202",
-    "xmlbuilder": "0.1.5",
-    "stack-trace": "0.0.6",
-    "hashish": "0.0.4"
+    "request": "~2.9.202",
+    "xmlbuilder": "~0.1.5",
+    "stack-trace": "~0.0.6",
+    "hashish": "~0.0.4"
   },
   "devDependencies": {
     "sinon": "~1.7.2",
-    "far": "0.0.4",
-    "express": "2.5.10"
+    "far": "~0.0.4",
+    "express": "~2.5.10"
   },
   "optionalDependencies": {}
 }
