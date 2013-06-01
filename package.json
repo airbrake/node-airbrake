@@ -19,7 +19,7 @@
     "hashish": "0.0.4"
   },
   "devDependencies": {
-    "sinon": "1.1.1",
+    "sinon": "~1.7.2",
     "far": "0.0.4",
     "express": "2.5.10"
   },
