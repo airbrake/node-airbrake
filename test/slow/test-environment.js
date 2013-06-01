@@ -12,11 +12,9 @@ var assert = require('assert');
 })();
 
 (function testDevelopmentEnviroment() {
-  var airbrake = require(common.dir.root).createClient(common.key, 'development');
-  // this should be posted to airbrake simply because we didn't add 'development' to
-  // airbrake.developmentEnvironments. The decision to default to an empty array here
-  // was to ensure that the previous expected behavior would continue (in the odd chance
-  // someone was expecting airbrake notifications in development).
+  var airbrake = require(common.dir.root).createClient(common.key, 'dev');
+  // this should be posted to airbrake simply because we didn't add 'dev' to
+  // airbrake.developmentEnvironments. 
   airbrake.notify(new Error('this should be posted to airbrake'), function(err, url) {
     assert.equal(err, undefined);
     assert.ok(/^http:\/\//.test(url));
