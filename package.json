@@ -12,11 +12,12 @@
     "Rob Scott <rob.scott87@gmail.com> (http://lifekraze.com/rob)",
     "Dylan Smith <Dylan.Smith@shopify.com> (https://github.com/dylanahsmith)",
     "stefounet <s@fasterize.com> (http://fasterize.com)",
-    "sreuter <s.reuter@geek-it.de> (https://github.com/sreuterairbrake.io"
+    "sreuter <s.reuter@geek-it.de> (https://github.com/sreuterairbrake.io",
+    "Johnny Halife <johnny.halife@me.com> (http://johnny.io)",
   ],
   "name": "airbrake",
   "description": "Node.js client for airbrake.io",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "homepage": "https://github.com/felixge/node-airbrake",
   "repository": {
     "type": "git",
