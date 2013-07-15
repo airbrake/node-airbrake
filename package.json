@@ -13,7 +13,7 @@
     "Dylan Smith <Dylan.Smith@shopify.com> (https://github.com/dylanahsmith)",
     "stefounet <s@fasterize.com> (http://fasterize.com)",
     "sreuter <s.reuter@geek-it.de> (https://github.com/sreuterairbrake.io",
-    "Johnny Halife <johnny.halife@me.com> (http://johnny.io)",
+    "Johnny Halife <johnny.halife@me.com> (http://johnny.io)"
   ],
   "name": "airbrake",
   "description": "Node.js client for airbrake.io",
