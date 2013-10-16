@@ -42,12 +42,17 @@ airbrake.notify(err, function(err, url) {
 
 A custom error handler will need to be set for Express:
 
+Express 3.X
+``` javascript
+var airbrake = require('airbrake').createClient("your api key");
+app.use(airbrake.expressHandler())
+```
+
+Express 2.X
 ``` javascript
 var airbrake = require('airbrake').createClient("your api key");
 app.error(airbrake.expressHandler())
 ```
-
-This has been verified with Express 2.X
 
 ## Screenshot
 
