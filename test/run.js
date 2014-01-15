@@ -22,5 +22,4 @@ if (undefined !== verbosity) {
 
   far.verbose(verbosity)
 } 
-
 far.execute();

@@ -29,5 +29,5 @@ process.on('exit', function() {
   }
 
   var url = spy.args[0][1];
-  assert.ok(/^http:\/\//.test(url));
+  assert.ok(/^https?:\/\//.test(url));
 });
