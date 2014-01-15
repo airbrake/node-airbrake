@@ -39,7 +39,8 @@
   "devDependencies": {
     "sinon": "~1.7.2",
     "far": "~0.0.4",
-    "express": "~2.5.10"
+    "express": "~2.5.10",
+    "mockery": "~1.4.0"
   },
   "optionalDependencies": {},
   "license": "MIT"
