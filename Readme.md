@@ -200,6 +200,10 @@ Do not post to Airbrake when running in these environments.
 
 The timeout after which to give up trying to notify airbrake in ms.
 
+### airbrake.requestOptions = {}
+
+Additional request options that are merged with the default set of options that are passed to `request` during `notify()` and `trackDeployment()`.
+
 ### airbrake.handleExceptions()
 
 Registers a `process.on('uncaughtException')` listener. When an uncaught

@@ -17,15 +17,14 @@ var assert = require('assert');
   // airbrake.developmentEnvironments. 
   airbrake.notify(new Error('this should be posted to airbrake'), function(err, url) {
     assert.equal(err, undefined);
-    assert.ok(/^http:\/\//.test(url));
+    assert.ok(/^https?:\/\//.test(url));
   });
 })();
-
 
 (function testProductionEnviroment() {
   var airbrake = require(common.dir.root).createClient(common.key, 'production');
   airbrake.notify(new Error('this should be posted to airbrake'), function(err, url) {
     assert.equal(err, undefined);
-    assert.ok(/^http:\/\//.test(url));
+    assert.ok(/^https?:\/\//.test(url));
   });
 })();
