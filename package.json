@@ -17,7 +17,7 @@
   ],
   "name": "airbrake",
   "description": "Node.js client for airbrake.io",
-  "version": "0.3.4",
+  "version": "0.3.5",
   "homepage": "https://github.com/felixge/node-airbrake",
   "repository": {
     "type": "git",
