@@ -2,7 +2,7 @@ BIN = ./node_modules/.bin
 .PHONY: test clean
 
 test:
-	@node test/run.js
+	@npm test
 
 define release
 	VERSION=`node -pe "require('./package.json').version"` && \
