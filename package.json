@@ -28,7 +28,7 @@
     "node": "*"
   },
   "scripts": {
-    "test": "test/run.js"
+    "test": "make test"
   },
   "dependencies": {
     "request": "~2.21.0",
