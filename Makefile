@@ -2,7 +2,6 @@ BIN = ./node_modules/.bin
 .PHONY: test clean
 
 test:
-	@echo "Testing"
 	@node test/run.js
 
 define release
