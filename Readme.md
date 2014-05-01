@@ -2,10 +2,9 @@
 
 [![Build Status](https://travis-ci.org/airbrake/node-airbrake.svg?branch=master)](https://travis-ci.org/airbrake/node-airbrake)
 
-Node.js client for [airbrake.io][].
+<img src="http://f.cl.ly/items/1t0F40132D243k1D0d0g/nodejs.jpg" width=800px>
 
-[airbrake.io]: https://airbrake.io
-[hoptoadapp.com]: http://robots.thoughtbot.com/post/7665411707/hoptoad-is-now-airbrake
+Node.js client for [airbrake.io][].
 
 ## Install
 
