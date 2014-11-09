@@ -91,7 +91,6 @@ each delivered error:
 * **server-environment.project-root:** (`airbrake.projectRoot` string if set)
 * **server-environment.environment-name:** (`airbrake.env` string)
 * **server-environment.app-version:** (`airbrake.appVersion string if set)
-* **server-environment.hostname:** (`airbrake.hostname` string if set)
 
 You can add additional context information by modifying the error properties
 listed above:
