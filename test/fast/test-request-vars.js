@@ -4,6 +4,16 @@ var assert = require('assert');
 var xmlbuilder = require('xmlbuilder');
 var os = require('os');
 
+(function testSettingCustomExclusions() {
+  var err = new Error();
+  err.domain = { id: 'identifier' };
+
+  airbrake.exclude.push('domain');
+
+  var cgiData = airbrake.cgiDataVars(err);
+  assert(!cgiData['err.domain']);
+})();
+
 (function testCgiDataFromProcessEnv() {
   var err = new Error();
   var cgiData = airbrake.cgiDataVars(err);
