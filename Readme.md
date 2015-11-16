@@ -14,7 +14,7 @@ npm install airbrake
 ## Basic usage
 
 The common use case for this module is to catch all `'uncaughtException'`
-events on the `process` object and send them to airbrake:
+events on the `process` object and send them to Airbrake:
 
 ``` javascript
 var airbrake = require('airbrake').createClient("your api key");
@@ -24,10 +24,10 @@ throw new Error('I am an uncaught exception');
 ```
 
 Please note that the above will re-throw the exception after it has been
-successfully delivered to airbrake, caushing your process to exit with status 1.
+successfully delivered to Airbrake, causing your process to exit with status 1.
 
 If you want more control over the delivery of your errors, you can also
-manually submit errors to airbrake.
+manually submit errors to Airbrake.
 
 ``` javascript
 var airbrake = require('airbrake').createClient("your api key");
@@ -56,7 +56,7 @@ app.error(airbrake.expressHandler())
 
 ## Screenshot
 
-This screenshot shows an airbrake error send from this module:
+This screenshot shows an Airbrake error send from this module:
 
 ![screenshot](https://github.com/felixge/node-airbrake/raw/master/screenshot.png)
 
@@ -67,8 +67,8 @@ This screenshot shows an airbrake error send from this module:
 * Support for all features of the [2.1 notification API][2.1api]
 * Support for [long-stack-traces][]
 * Optional auto-handler for `uncaughtException` events
-* Provides notification url linking to airbrake in `notify()` callback
-* Timeout airbrake requests after 30 seconds, you never know
+* Provides notification url linking to Airbrake in `notify()` callback
+* Timeout Airbrake requests after 30 seconds, you never know
 
 [long-stack-traces]: https://github.com/tlrobinson/long-stack-traces
 
@@ -137,7 +137,7 @@ airbrake.on('vars', function(type, vars) {
 
 ## Tracking deployments
 
-This client supports airbrake's [deployment tracking][]:
+This client supports Airbrake's [deployment tracking][]:
 
 ``` javascript
 var airbrake = require('airbrake').createClient("your api key");
@@ -162,13 +162,17 @@ options.
 
 ## API
 
-### Airbreak.createClient(apiKey, [env])
+### var airbrake = Airbrake.createClient(key, [env])
 
-Returns a new Airbrake instance.
+`Airbrake.createClient()` returns a new Airbrake instance.
+
+Options
+* `key` - Your application's Airbrake API key.
+* `env` - The name of the server environment this is running in.
 
 ### airbrake.key = null
 
-The API key to use.
+Your application's Airbrake API key.
 
 ### airbrake.env = process.env.NODE_ENV || 'development'
 
@@ -198,7 +202,7 @@ Do not post to Airbrake when running in these environments.
 
 ### airbrake.timeout = 30 * 1000
 
-The timeout after which to give up trying to notify airbrake in ms.
+The timeout after which to give up trying to notify Airbrake in ms.
 
 ### airbrake.requestOptions = {}
 
@@ -207,7 +211,7 @@ Additional request options that are merged with the default set of options that 
 ### airbrake.handleExceptions()
 
 Registers a `process.on('uncaughtException')` listener. When an uncaught
-exception occurs, the error is send to airbrake, and then re-thrown to
+exception occurs, the error is sent to Airbrake, and then re-thrown to
 kill the process.
 
 ### airbrake.notify(err, [cb])
@@ -215,7 +219,7 @@ kill the process.
 Sends the given `err` to airbrake.
 
 The callback parameter receives two arguments, `err, url`. `err` is set if
-the delivery to airbrake failed.
+the delivery to Airbrake failed.
 
 If no `cb` is given, and the delivery fails, an `error` event is emitted. If
 there is no listener for this event, node will kill the process as well. This
@@ -223,7 +227,7 @@ is done to avoid silent error delivery failure.
 
 ### airbrake.trackDeployment([params, [cb]])
 
-Notifies airbrake about a deployment. `params` is an object with the following
+Notifies Airbrake about a deployment. `params` is an object with the following
 options:
 
 * `env:` The environment being deployed, defaults to `airbrake.env`.
