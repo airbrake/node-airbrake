@@ -217,6 +217,14 @@ Registers a `process.on('uncaughtException')` listener. When an uncaught
 exception occurs, the error is sent to Airbrake, and then re-thrown to
 kill the process.
 
+### airbrake.expressHandler(disableUncaughtException)
+
+A custom error handler that is used with Express. Integrate with Express
+middleware using `app.use()`.
+
+Options:
+* `disableUncaughtException`: Disables re-throwing and killing process on uncaught exception.
+
 ### airbrake.notify(err, [cb])
 
 Sends the given `err` to airbrake.
