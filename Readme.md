@@ -1,8 +1,8 @@
 # airbrake
 
-Node.js client for [airbrakeapp.com][], formerly known as [hoptoadapp.com][].
+Node.js client for [airbrake.io][], formerly known as [hoptoadapp.com][].
 
-[airbrakeapp.com]: http://airbrakeapp.com/
+[airbrake.io]: https://airbrake.io
 [hoptoadapp.com]: http://robots.thoughtbot.com/post/7665411707/hoptoad-is-now-airbrake
 
 ## Install
@@ -174,7 +174,7 @@ The API key to use.
 
 The name of the server environment this is running in.
 
-### airbrake.host = 'http://' + os.hostname()
+### airbrake.host = 'https://' + os.hostname()
 
 The base url for errors. If `err.url` is not set, `airbrake.host` is used
 instead. If `err.url` is a relative url starting with `'/'`, it is appended
@@ -188,7 +188,7 @@ The root directory of this project.
 
 The version of this app. Set to a semantic version number, or leave unset.
 
-### airbrake.protocol = 'http'
+### airbrake.protocol = 'https'
 
 The protocol to use.
 
