@@ -23,16 +23,10 @@ app.get('/uncaught', function(req, res, next) {
   throw err;
 });
 
-
-process.on('exit', function() {
-  assert.equal(airbrake.notify.callCount, 3);
-  process.exit();
-});
-
 http.request({port: common.port, path: '/caught'}, function() {
   assert.equal(airbrake.notify.callCount, 1);
   http.request({port: common.port, path: '/uncaught'}, function () {
     assert.equal(airbrake.notify.callCount, 2);
-    throw new Error('I am really uncaught');
+    process.exit()
   }).end();
 }).end();
