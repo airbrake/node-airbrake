@@ -1,6 +1,6 @@
 # airbrake
 
-Node.js client for [airbrake.io][], formerly known as [hoptoadapp.com][].
+Node.js client for [airbrake.io][].
 
 [airbrake.io]: https://airbrake.io
 [hoptoadapp.com]: http://robots.thoughtbot.com/post/7665411707/hoptoad-is-now-airbrake
@@ -252,4 +252,4 @@ it.
 
 ## License
 
-airbrake is licensed under the MIT license.
+MIT
