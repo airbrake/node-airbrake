@@ -246,16 +246,9 @@ options:
 * `repo:` The github url of this repository. Defaults to `''`.
 * `rev:` The revision of this deployment. Defaults to `''`.
 
-## Alternative modules
-
-This module is meant as a replacement for [hoptoad-notifier][], which does not
-support all features of the [2.1 API][2.1api].
-
-[hoptoad-notifier]: https://github.com/tristandunn/node-hoptoad-notifier
-
 ## Contribute
 
-Besides bug fixes, I'd be happy to accept patches for:
+Besides bug fixes, we're happy to accept patches for:
 
 * Automatically parsing `repo` and `rev` from the local git repository when
   calling `airbrake.trackDeployment()`. This can be done via `exec()`, but must
