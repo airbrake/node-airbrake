@@ -12,6 +12,7 @@ var server = http.createServer(function(req, res) {
 server.listen(common.port, function() {
   var err = new Error('test-notify');
   airbrake.serviceHost = 'localhost:' + common.port;
+  airbrake.protocol = 'http';
 
   var errorTimeout = setTimeout(function () {
     errorTimeout = null
