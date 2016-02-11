@@ -1,4 +1,6 @@
-# airbrake
+# Airbrake
+
+[![Build Status](https://travis-ci.org/airbrake/node-airbrake.svg?branch=master)](https://travis-ci.org/airbrake/node-airbrake)
 
 Node.js client for [airbrake.io][].
 
