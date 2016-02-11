@@ -4,7 +4,7 @@
 
 <img src="http://f.cl.ly/items/1t0F40132D243k1D0d0g/nodejs.jpg" width=800px>
 
-Node.js client for [airbrake.io][].
+Node.js client for [airbrake.io](https://airbrake.io).
 
 ## Install
 
