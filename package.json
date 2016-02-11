@@ -28,7 +28,7 @@
     "node": "*"
   },
   "scripts": {
-    "test": "test/run.js"
+    "test": "nsp check && test/run.js"
   },
   "dependencies": {
     "request": "~2.40.0",
@@ -37,11 +37,12 @@
     "hashish": "~0.0.4"
   },
   "devDependencies": {
-    "sinon": "~1.7.2",
-    "far": "~0.0.4",
     "express": "~2.5.10",
+    "far": "~0.0.4",
     "mockery": "~1.4.0",
-    "semver": "*"
+    "nsp": "^2.2.0",
+    "semver": "*",
+    "sinon": "~1.7.2"
   },
   "optionalDependencies": {},
   "license": "MIT"
