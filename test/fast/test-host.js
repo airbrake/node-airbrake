@@ -6,7 +6,7 @@ var os = require('os');
 var xmlbuilder = require('xmlbuilder');
 
 (function testDefaultHost() {
-  assert.equal(airbrake.host, 'http://' + os.hostname());
+  assert.equal(airbrake.host, 'https://' + os.hostname());
 })();
 
 (function testPlainHost() {
