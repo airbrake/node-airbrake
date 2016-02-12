@@ -37,7 +37,7 @@
     "hashish": "~0.0.4"
   },
   "devDependencies": {
-    "express": "~2.5.10",
+    "express": "~4.13.4",
     "far": "~0.0.4",
     "mockery": "~1.4.0",
     "nsp": "~2.2.0",
