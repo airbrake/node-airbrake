@@ -1,5 +1,5 @@
 var express = require('express');
-var app = express.createServer();
+var app = express();
 var common = require('../common');
 var airbrake = require(common.dir.root).createClient(common.key);
 var assert = require('assert');
@@ -8,7 +8,6 @@ var http = require('http');
 
 sinon.spy(airbrake, 'notify');
 
-app.error(airbrake.expressHandler());
 app.listen(common.port);
 
 app.get('/caught', function(req, res, next) {
@@ -22,6 +21,8 @@ app.get('/uncaught', function(req, res, next) {
   var err = new Error('i am quasi uncaught!');
   throw err;
 });
+
+app.use(airbrake.expressHandler());
 
 http.request({port: common.port, path: '/caught'}, function() {
   assert.equal(airbrake.notify.callCount, 1);
