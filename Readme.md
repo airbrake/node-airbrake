@@ -1,6 +1,6 @@
 # Airbrake
 
-[![Build Status](https://travis-ci.org/airbrake/node-airbrake.svg?branch=master)](https://travis-ci.org/airbrake/node-airbrake)
+[![Circle CI](https://circleci.com/gh/airbrake/node-airbrake.svg?style=shield)](https://circleci.com/gh/airbrake/node-airbrake)
 
 <img src="http://f.cl.ly/items/1t0F40132D243k1D0d0g/nodejs.jpg" width=800px>
 
