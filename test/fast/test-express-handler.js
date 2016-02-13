@@ -6,7 +6,7 @@ var assert = require('assert');
 var sinon = require('sinon');
 var http = require('http');
 
-sinon.spy(airbrake, 'notify');
+sinon.spy(airbrake, '_onError');
 
 app.listen(common.port);
 
@@ -24,10 +24,13 @@ app.get('/uncaught', function(req, res, next) {
 
 app.use(airbrake.expressHandler());
 
-http.request({port: common.port, path: '/caught'}, function() {
-  assert.equal(airbrake.notify.callCount, 1);
-  http.request({port: common.port, path: '/uncaught'}, function () {
-    assert.equal(airbrake.notify.callCount, 2);
-    process.exit()
-  }).end();
+http.request({port: common.port, path: '/caught', headers: {
+    "User-Agent": "foo"
+  }}, function() {
+    assert.equal(airbrake._onError.getCall(0).args[0].ua, 'foo')
+    assert.equal(airbrake._onError.callCount, 1);
+    http.request({port: common.port, path: '/uncaught'}, function () {
+      assert.equal(airbrake._onError.callCount, 2);
+      process.exit()
+    }).end();
 }).end();
