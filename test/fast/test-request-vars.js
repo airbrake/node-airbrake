@@ -28,19 +28,6 @@ var os = require('os');
   assert.ok(cgiData['process.memoryUsage'].rss);
   assert.equal(cgiData['os.loadavg'].length, 3);
   assert.equal(typeof cgiData['os.uptime'], 'number');
-  delete cgiData['process.pid'];
-  delete cgiData['process.uid'];
-  delete cgiData['process.gid'];
-  delete cgiData['process.cwd'];
-  delete cgiData['process.execPath'];
-  delete cgiData['process.version'];
-  delete cgiData['process.memoryUsage'];
-  delete cgiData['process.argv'];
-  delete cgiData['os.loadavg'];
-  delete cgiData['os.uptime'];
-
-  assert.deepEqual(cgiData, process.env);
-  assert.notStrictEqual(cgiData, process.env);
 })();
 
 (function testCustomErrorProperties() {
