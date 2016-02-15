@@ -271,6 +271,12 @@ Besides bug fixes, we're happy to accept patches for:
 If you have other feature ideas, please open an issue first, so we can discuss
 it.
 
+## Contributors
+
+Originally created by [Felix Geisendörfer](https://github.com/felixge).
+
+See all [contributors](https://github.com/airbrake/node-airbrake/graphs/contributors).
+
 ## License
 
 MIT
