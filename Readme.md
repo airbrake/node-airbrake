@@ -79,7 +79,7 @@ This screenshot shows an Airbrake error send from this module:
 
 ## Features
 
-* Automatically add `process.env` as well as other information when sending notifications
+* Support sending custom environment variables
 * Detect and fix circular references in error context information
 * Support for all features of the [2.1 notification API][2.1api]
 * Support for [long-stack-traces][]
