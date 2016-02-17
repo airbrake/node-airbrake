@@ -38,6 +38,15 @@ var os = require('os');
   assert.equal(cgiData['err.myKey'], err.myKey);
 })();
 
+(function testcustomEnvVars(){
+  var err = new Error();
+  err.myKey = 'some value';
+
+  airbrake.envVars.push("PWD")
+  var cgiData = airbrake.cgiDataVars(err);
+  assert.equal(typeof cgiData['PWD'], 'string');
+})();
+
 (function testSessionVars() {
   var err = new Error();
   err.session = {foo: 'bar'};
