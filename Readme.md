@@ -79,7 +79,7 @@ This screenshot shows an Airbrake error send from this module:
 
 ## Features
 
-* Support sending custom environment variables
+* Send chosen environment variables (whitelist)
 * Detect and fix circular references in error context information
 * Support for all features of the [2.1 notification API][2.1api]
 * Support for [long-stack-traces][]
@@ -206,6 +206,10 @@ The timeout after which to give up trying to notify Airbrake in ms.
 ### airbrake.requestOptions = {}
 
 Additional request options that are merged with the default set of options that are passed to `request` during `notify()` and `trackDeployment()`.
+
+### airbrake.envVars = []
+
+Names of environment variables to send.
 
 ### airbrake.handleExceptions()
 
