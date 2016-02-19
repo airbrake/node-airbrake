@@ -79,7 +79,7 @@ This screenshot shows an Airbrake error send from this module:
 
 ## Features
 
-* Send chosen environment variables (whitelist)
+* Send chosen environment variables (whitelist or blacklist)
 * Detect and fix circular references in error context information
 * Support for all features of the [2.1 notification API][2.1api]
 * Support for [long-stack-traces][]
