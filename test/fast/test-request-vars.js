@@ -38,13 +38,25 @@ var os = require('os');
   assert.equal(cgiData['err.myKey'], err.myKey);
 })();
 
-(function testcustomEnvVars(){
+(function testWhitelistKeys(){
   var err = new Error();
   err.myKey = 'some value';
 
-  airbrake.envVars.push("PWD")
+  airbrake.whiteListKeys.push("PWD");
   var cgiData = airbrake.cgiDataVars(err);
   assert.equal(typeof cgiData['PWD'], 'string');
+  airbrake.whiteListKeys = [];
+})();
+
+(function testBlacklistKeys(){
+  var err = new Error();
+  err.myKey = 'some value';
+
+  airbrake.blackListKeys.push("PWD");
+  var cgiData = airbrake.cgiDataVars(err);
+  assert.equal(typeof cgiData['PWD'], 'undefined');
+  assert.equal(typeof cgiData['PATH'], 'string');
+  airbrake.blackListKeys = []
 })();
 
 (function testSessionVars() {

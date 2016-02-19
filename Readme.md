@@ -207,9 +207,13 @@ The timeout after which to give up trying to notify Airbrake in ms.
 
 Additional request options that are merged with the default set of options that are passed to `request` during `notify()` and `trackDeployment()`.
 
-### airbrake.envVars = []
+### airbrake.whiteListKeys = []
 
 Names of environment variables to send.
+
+### airbrake.blackListKeys = []
+
+Names of environment variables to filter out.
 
 ### airbrake.handleExceptions()
 
