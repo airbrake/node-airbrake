@@ -1,5 +1,5 @@
 var common = require('../common');
-var airbrake = require(common.dir.root).createClient(common.key, 'production');
+var airbrake = require(common.dir.root).createClient(common.key, null, 'production');
 var assert = require('assert');
 var http = require('http');
 

@@ -13,7 +13,7 @@ var requestStub = sinon.stub()
 mockery.registerMock('request', requestStub);
 
 var Airbrake = require(common.dir.root);
-var airbrake = Airbrake.createClient(common.key, 'production');
+var airbrake = Airbrake.createClient(common.key, null, 'production');
 airbrake.requestOptions = {
   myCustomOption: 'myCustomValue',
   method: 'GET'
