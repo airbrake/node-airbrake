@@ -79,7 +79,7 @@ This screenshot shows an Airbrake error send from this module:
 
 ## Features
 
-* Automatically add `process.env` as well as other information when sending notifications
+* Send chosen environment variables (whitelist or blacklist)
 * Detect and fix circular references in error context information
 * Support for all features of the [2.1 notification API][2.1api]
 * Support for [long-stack-traces][]
@@ -133,23 +133,6 @@ Unfortunately `uncaughtException` events cannot be traced back to particular
 requests, so you should still try to handle errors where they occur.
 
 [stack-trace]: https://github.com/felixge/node-stack-trace
-
-## Removing context from errors
-
-In some scenarios you might want to filter some context to never show up in
-Airbrake. For example you might have a private key loaded in your environment
-memory, or your user has some critical data in his session, and you want to
-hide that.
-
-This can be done by hooking into the `'vars'` event like so:
-
-``` javascript
-airbrake.on('vars', function(type, vars) {
-  if (type === 'cgi-data') {
-    delete vars.SECRET;
-  }
-});
-```
 
 ## Tracking deployments
 
@@ -227,6 +210,14 @@ The HTTP/HTTPS proxy to use when making requests.
 ### airbrake.requestOptions = {}
 
 Additional request options that are merged with the default set of options that are passed to `request` during `notify()` and `trackDeployment()`.
+
+### airbrake.whiteListKeys = []
+
+Names of environment variables to send.
+
+### airbrake.blackListKeys = []
+
+Names of environment variables to filter out.
 
 ### airbrake.handleExceptions()
 

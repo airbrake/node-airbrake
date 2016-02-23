@@ -28,19 +28,6 @@ var os = require('os');
   assert.ok(cgiData['process.memoryUsage'].rss);
   assert.equal(cgiData['os.loadavg'].length, 3);
   assert.equal(typeof cgiData['os.uptime'], 'number');
-  delete cgiData['process.pid'];
-  delete cgiData['process.uid'];
-  delete cgiData['process.gid'];
-  delete cgiData['process.cwd'];
-  delete cgiData['process.execPath'];
-  delete cgiData['process.version'];
-  delete cgiData['process.memoryUsage'];
-  delete cgiData['process.argv'];
-  delete cgiData['os.loadavg'];
-  delete cgiData['os.uptime'];
-
-  assert.deepEqual(cgiData, process.env);
-  assert.notStrictEqual(cgiData, process.env);
 })();
 
 (function testCustomErrorProperties() {
@@ -49,6 +36,28 @@ var os = require('os');
 
   var cgiData = airbrake.cgiDataVars(err);
   assert.equal(cgiData['err.myKey'], err.myKey);
+})();
+
+(function testWhitelistKeys(){
+  var err = new Error();
+  err.myKey = 'some value';
+
+  airbrake.whiteListKeys.push("PWD");
+  var cgiData = airbrake.cgiDataVars(err);
+  assert.equal(typeof cgiData['PWD'], 'string');
+  assert.equal(cgiData['PATH'], '[FILTERED]');
+  airbrake.whiteListKeys = [];
+})();
+
+(function testBlacklistKeys(){
+  var err = new Error();
+  err.myKey = 'some value';
+
+  airbrake.blackListKeys.push("PWD");
+  var cgiData = airbrake.cgiDataVars(err);
+  assert.equal(cgiData['PWD'], '[FILTERED]');
+  assert.equal(typeof cgiData['PATH'], 'string');
+  airbrake.blackListKeys = []
 })();
 
 (function testSessionVars() {

@@ -15,6 +15,7 @@
 * update default protocol to https ([#71][71])
 * remove uncaught exception from tests ([#72][72])
 * refactor `notify` into `_sendRequest` ([#73][73])
+* make filtering of environment variables customizable ([#84][84])
 
 [79]:https://github.com/airbrake/node-airbrake/pulls/79
 [45]:https://github.com/airbrake/node-airbrake/pull/45
@@ -30,3 +31,4 @@
 [71]:https://github.com/airbrake/node-airbrake/pull/71
 [72]:https://github.com/airbrake/node-airbrake/pull/72
 [73]:https://github.com/airbrake/node-airbrake/pull/73
+[84]:https://github.com/airbrake/node-airbrake/pull/84
