@@ -45,6 +45,7 @@ var os = require('os');
   airbrake.whiteListKeys.push("PWD");
   var cgiData = airbrake.cgiDataVars(err);
   assert.equal(typeof cgiData['PWD'], 'string');
+  assert.equal(cgiData['PATH'], '[FILTERED]');
   airbrake.whiteListKeys = [];
 })();
 
@@ -54,7 +55,7 @@ var os = require('os');
 
   airbrake.blackListKeys.push("PWD");
   var cgiData = airbrake.cgiDataVars(err);
-  assert.equal(typeof cgiData['PWD'], 'undefined');
+  assert.equal(cgiData['PWD'], '[FILTERED]');
   assert.equal(typeof cgiData['PATH'], 'string');
   airbrake.blackListKeys = []
 })();
