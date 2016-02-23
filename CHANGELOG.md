@@ -2,6 +2,7 @@
 
 ### master
 
+### [v0.4.1][v0.4.1] (February 23, 2016)
 ### [v0.4.0][v0.4.0] (February 23, 2016)
 
 * start sending user agent info from Express handler ([#79][79])
@@ -37,3 +38,4 @@
 [84]:https://github.com/airbrake/node-airbrake/pull/84
 [85]:https://github.com/airbrake/node-airbrake/pull/85
 [v0.4.0]: https://github.com/airbrake/node-airbrake/releases/tag/v0.4.0
+[v0.4.1]: https://github.com/airbrake/node-airbrake/releases/tag/v0.4.1
