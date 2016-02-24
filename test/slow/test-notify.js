@@ -1,5 +1,5 @@
 var common = require('../common');
-var airbrake = require(common.dir.root).createClient(common.key, null, 'production');
+var airbrake = require(common.dir.root).createClient(null, common.key, 'production');
 var sinon = require('sinon');
 var assert = require('assert');
 

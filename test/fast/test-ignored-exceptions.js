@@ -15,7 +15,7 @@ MyError.prototype = Object.create(Error.prototype, {
 });
 
 (function testAddingExceptionToIgnoredExceptions() {
-  var airbrake = require(common.dir.root).createClient(common.key, 'production');
+  var airbrake = require(common.dir.root).createClient(null, common.key, 'production');
   airbrake.ignoredExceptions.push(MyError);
 
   sinon.stub(airbrake, '_sendRequest');
