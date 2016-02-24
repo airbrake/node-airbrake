@@ -2,6 +2,8 @@
 
 ### master
 
+* update to JSON API ([#86][86])
+
 ### [v0.4.0][v0.4.0] (February 23, 2016)
 
 * start sending user agent info from Express handler ([#79][79])
@@ -36,4 +38,5 @@
 [73]:https://github.com/airbrake/node-airbrake/pull/73
 [84]:https://github.com/airbrake/node-airbrake/pull/84
 [85]:https://github.com/airbrake/node-airbrake/pull/85
+[86]:https://github.com/airbrake/node-airbrake/pull/86
 [v0.4.0]: https://github.com/airbrake/node-airbrake/releases/tag/v0.4.0
