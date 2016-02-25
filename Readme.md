@@ -48,6 +48,10 @@ airbrake.notify(err, function(err, url) {
   // Error has been delivered, url links to the error in airbrake
 });
 ```
+
+By default only the errors from the production environment will get reported,
+so make sure to put `production` in your `NODE_ENV`.
+
 ### Usage with Express
 
 A custom error handler will need to be set for Express:
