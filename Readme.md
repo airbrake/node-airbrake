@@ -188,7 +188,7 @@ The base url for errors. If `err.url` is not set, `airbrake.host` is used
 instead. If `err.url` is a relative url starting with `'/'`, it is appended
 to `airbrake.host`. If `err.url` is an absolute url, `airbrake.host` is ignored.
 
-### airbrake.projectRoot = null
+### airbrake.projectRoot = process.cwd()
 
 The root directory of this project.
 
