@@ -79,7 +79,7 @@ app.error(airbrake.expressHandler());
 
 This screenshot shows an Airbrake error send from this module:
 
-![screenshot](https://github.com/felixge/node-airbrake/raw/master/screenshot.png)
+![screenshot](https://github.com/airbrake/node-airbrake/raw/master/screenshot.png)
 
 ## Features
 
