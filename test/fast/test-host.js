@@ -12,7 +12,7 @@ var xmlbuilder = require('xmlbuilder');
 (function testPlainHost() {
   var err = new Error('oh no');
   var url = airbrake.contextJSON(err)["url"];
-  assert.equal(url, airbrake.host);
+  assert.equal(url, airbrake.host.toLowerCase() + "/");
 })();
 
 (function testPartialErrUrl() {
@@ -20,7 +20,7 @@ var xmlbuilder = require('xmlbuilder');
   err.url = '/foo';
   var url = airbrake.contextJSON(err)["url"];
 
-  assert.equal(url, airbrake.host + err.url);
+  assert.equal(url, airbrake.host.toLowerCase() + err.url);
 })();
 
 (function testAbsoluteErrUrl() {
