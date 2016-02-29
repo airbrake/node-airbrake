@@ -260,14 +260,7 @@ options:
 
 ## Contribute
 
-Besides bug fixes, we're happy to accept patches for:
-
-* Automatically parsing `repo` and `rev` from the local git repository when
-  calling `airbrake.trackDeployment()`. This can be done via `exec()`, but must
-  not be done when specifying `repo` / `rev` by hand, or if they are set to
-  `false`.
-
-If you have other feature ideas, please open an issue first, so we can discuss
+If you have feature ideas, please open an issue first, so we can discuss
 it.
 
 ## Contributors
