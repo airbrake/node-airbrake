@@ -2,6 +2,8 @@
 
 ### master
 
+### [v1.0.0][v1.0.0] (March 2, 2016)
+
 * update to JSON API ([#86][86])
 
 ### [v0.4.1][v0.4.1] (February 23, 2016)
@@ -42,3 +44,4 @@
 [86]:https://github.com/airbrake/node-airbrake/pull/86
 [v0.4.0]: https://github.com/airbrake/node-airbrake/releases/tag/v0.4.0
 [v0.4.1]: https://github.com/airbrake/node-airbrake/releases/tag/v0.4.1
+[v1.0.0]: https://github.com/airbrake/node-airbrake/releases/tag/v1.0.0
