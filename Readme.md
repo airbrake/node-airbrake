@@ -260,8 +260,8 @@ options:
 
 * `env:` The environment being deployed, defaults to `airbrake.env`.
 * `user:` The user doing the deployment, defaults to `process.env.USER`.
-* `repo:` The github url of this repository. Defaults to `''`.
-* `rev:` The revision of this deployment. Defaults to `''`.
+* `repo:` The github url of this repository. Defaults to `git config --get remote.origin.url`.
+* `rev:` The revision of this deployment. Defaults to `git rev-parse HEAD`.
 
 ## Contribute
 
