@@ -18,7 +18,7 @@ The common use case for this module is to catch all `'uncaughtException'`
 events on the `process` object and send them to Airbrake:
 
 ``` javascript
-var airbrake = require('airbrake').createClient("your api key");
+var airbrake = require('airbrake').createClient("your project ID", "your api key");
 airbrake.handleExceptions();
 
 throw new Error('I am an uncaught exception');
@@ -40,7 +40,7 @@ If you want more control over the delivery of your errors, you can also
 manually submit errors to Airbrake.
 
 ``` javascript
-var airbrake = require('airbrake').createClient("your api key");
+var airbrake = require('airbrake').createClient("your project ID", "your api key");
 var err = new Error('Something went terribly wrong');
 airbrake.notify(err, function(err, url) {
   if (err) throw err;
@@ -58,20 +58,20 @@ A custom error handler will need to be set for Express:
 
 Express 4.X
 ```javascript
-var airbrake = require('airbrake').createClient("your api key");
+var airbrake = require('airbrake').createClient("your project ID", "your api key");
 app.use(airbrake.expressHandler());
 ```
 
 Express 3.X
 ``` javascript
-var airbrake = require('airbrake').createClient("your api key");
+var airbrake = require('airbrake').createClient("your project ID", "your api key");
 app.use(app.router);
 app.use(airbrake.expressHandler());
 ```
 
 Express 2.X
 ``` javascript
-var airbrake = require('airbrake').createClient("your api key");
+var airbrake = require('airbrake').createClient("your project ID", "your api key");
 app.error(airbrake.expressHandler());
 ```
 
@@ -117,7 +117,7 @@ You can add additional context information by modifying the error properties
 listed above:
 
 ``` javascript
-var airbrake = require('airbrake').createClient("your api key");
+var airbrake = require('airbrake').createClient("your project ID", "your api key");
 var http = require('http');
 
 http.createServer(function(req, res) {
@@ -143,7 +143,7 @@ requests, so you should still try to handle errors where they occur.
 This client supports Airbrake's [deployment tracking][]:
 
 ``` javascript
-var airbrake = require('airbrake').createClient("your api key");
+var airbrake = require('airbrake').createClient("your project ID", "your api key");
 var deployment = {
   rev: '98103a8fa850d5eaf3666e419d8a0a93e535b1b2',
   repo: 'git@github.com:felixge/node-airbrake.git',
@@ -165,13 +165,18 @@ options.
 
 ## API
 
-### var airbrake = Airbrake.createClient(key, [env])
+### var airbrake = Airbrake.createClient(projectId, key, [env])
 
 `Airbrake.createClient()` returns a new Airbrake instance.
 
 Options
+* `projectId` - Your application's Airbrake project ID.
 * `key` - Your application's Airbrake API key.
 * `env` - The name of the server environment this is running in.
+
+### airbrake.projectId = null
+
+Your application's Airbrake project ID.
 
 ### airbrake.key = null
 
@@ -187,7 +192,7 @@ The base url for errors. If `err.url` is not set, `airbrake.host` is used
 instead. If `err.url` is a relative url starting with `'/'`, it is appended
 to `airbrake.host`. If `err.url` is an absolute url, `airbrake.host` is ignored.
 
-### airbrake.projectRoot = null
+### airbrake.projectRoot = process.cwd()
 
 The root directory of this project.
 

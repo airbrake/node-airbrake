@@ -3,7 +3,7 @@ var assert = require('assert');
 var sinon = require('sinon');
 
 (function testAddingKeyToDevelopmentEnvironments() {
-  var airbrake = require(common.dir.root).createClient(common.key, 'dev');
+  var airbrake = require(common.dir.root).createClient(null, common.key, 'dev');
   airbrake.developmentEnvironments.push('dev');
   sinon.stub(airbrake, '_sendRequest');
 
@@ -14,7 +14,7 @@ var sinon = require('sinon');
 })();
 
 (function testDevelopmentEnviroment() {
-  var airbrake = require(common.dir.root).createClient(common.key, 'dev');
+  var airbrake = require(common.dir.root).createClient(null, common.key, 'dev');
   sinon.stub(airbrake, '_sendRequest');
 
   // this should be posted to airbrake simply because we didn't add 'dev' to
@@ -26,7 +26,7 @@ var sinon = require('sinon');
 })();
 
 (function testProductionEnviroment() {
-  var airbrake = require(common.dir.root).createClient(common.key, 'production');
+  var airbrake = require(common.dir.root).createClient(null, common.key, 'production');
   sinon.stub(airbrake, '_sendRequest');
 
   airbrake.notify(new Error('this should be posted to airbrake'));
