@@ -1,5 +1,5 @@
 var common = require('../common');
-var airbrake = require(common.dir.root).createClient('invalidkey', 'production');
+var airbrake = require(common.dir.root).createClient('1234', 'invalid', 'production');
 var assert = require('assert');
 
 var myErr = new Error('test-notify');

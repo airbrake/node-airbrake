@@ -10,13 +10,13 @@ var os = require('os');
 
   airbrake.exclude.push('domain');
 
-  var cgiData = airbrake.cgiDataVars(err);
+  var cgiData = airbrake.environmentJSON(err);
   assert(!cgiData['err.domain']);
 })();
 
 (function testCgiDataFromProcessEnv() {
   var err = new Error();
-  var cgiData = airbrake.cgiDataVars(err);
+  var cgiData = airbrake.environmentJSON(err);
 
   assert.equal(cgiData['process.pid'], process.pid);
   assert.equal(cgiData['process.uid'], process.getuid());
@@ -34,7 +34,7 @@ var os = require('os');
   var err = new Error();
   err.myKey = 'some value';
 
-  var cgiData = airbrake.cgiDataVars(err);
+  var cgiData = airbrake.environmentJSON(err);
   assert.equal(cgiData['err.myKey'], err.myKey);
 })();
 
@@ -43,7 +43,7 @@ var os = require('os');
   err.myKey = 'some value';
 
   airbrake.whiteListKeys.push("PWD");
-  var cgiData = airbrake.cgiDataVars(err);
+  var cgiData = airbrake.environmentJSON(err);
   assert.equal(typeof cgiData['PWD'], 'string');
   assert.equal(cgiData['PATH'], '[FILTERED]');
   airbrake.whiteListKeys = [];
@@ -54,7 +54,7 @@ var os = require('os');
   err.myKey = 'some value';
 
   airbrake.blackListKeys.push("PWD");
-  var cgiData = airbrake.cgiDataVars(err);
+  var cgiData = airbrake.environmentJSON(err);
   assert.equal(cgiData['PWD'], '[FILTERED]');
   assert.equal(typeof cgiData['PATH'], 'string');
   airbrake.blackListKeys = []
@@ -79,10 +79,11 @@ var os = require('os');
 (function testCircularVars() {
   var vars = {foo: 'bar', circular: {}};
   vars.circular.self = vars.circular;
+  var err = new Error();
+  err.params = vars;
 
   // test that no exception is thrown
-  var request = xmlbuilder.create().begin('request');
-  airbrake.addRequestVars(request, 'params', vars);
+  airbrake.notifyJSON(err);
 })();
 
 (function testAppendErrorXmlWithBadStack() {
@@ -90,13 +91,13 @@ var os = require('os');
   var err = new Error('oh oh');
 
   err.stack += '\n    at Array.0 (native)';
-  airbrake.appendErrorXml(notice, err);
+  airbrake.notifyJSON(err);
 })();
 
 (function testEmptyErrorMessageDoesNotProduceInvalidXml() {
   // see: https://github.com/felixge/node-airbrake/issues/15
   var err = new Error();
-  var xml = airbrake.notifyXml(err, true);
+  var xml = airbrake.notifyJSON(err, true);
 
   assert.ok(!/<\/>/.test(xml));
 })();
