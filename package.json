@@ -31,8 +31,8 @@
     "test": "nsp check && test/run.js"
   },
   "dependencies": {
-    "hashish": "~0.0.4",
     "json-stringify-safe": "~5.0.0",
+    "lodash": "^4.6.1",
     "request": "~2.69.0",
     "stack-trace": "~0.0.6",
     "xmlbuilder": "~0.4.2"
