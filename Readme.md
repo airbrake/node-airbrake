@@ -260,19 +260,12 @@ options:
 
 * `env:` The environment being deployed, defaults to `airbrake.env`.
 * `user:` The user doing the deployment, defaults to `process.env.USER`.
-* `repo:` The github url of this repository. Defaults to `''`.
-* `rev:` The revision of this deployment. Defaults to `''`.
+* `repo:` The github url of this repository. Defaults to `git config --get remote.origin.url`.
+* `rev:` The revision of this deployment. Defaults to `git rev-parse HEAD`.
 
 ## Contribute
 
-Besides bug fixes, we're happy to accept patches for:
-
-* Automatically parsing `repo` and `rev` from the local git repository when
-  calling `airbrake.trackDeployment()`. This can be done via `exec()`, but must
-  not be done when specifying `repo` / `rev` by hand, or if they are set to
-  `false`.
-
-If you have other feature ideas, please open an issue first, so we can discuss
+If you have feature ideas, please open an issue first, so we can discuss
 it.
 
 ## Contributors

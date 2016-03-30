@@ -35,6 +35,7 @@
     "lodash": "^4.6.1",
     "request": "~2.69.0",
     "stack-trace": "~0.0.6",
+    "sync-exec": "^0.6.2",
     "xmlbuilder": "~0.4.2"
   },
   "devDependencies": {
