@@ -2,8 +2,8 @@ var path = require('path');
 var _ = require('lodash');
 
 // An account on the free plan specifically for testing this module.
-exports.key = '092f2e6780f7c9117353d28dbe8486a3';
-exports.projectId = '72058';
+exports.key = '96979331ec7e18bbe7ec1529da2ed083';
+exports.projectId = '122374';
 
 // Use custom config if available instead
 try {
