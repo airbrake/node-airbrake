@@ -2,6 +2,12 @@
 
 ### master
 
+### [v1.0.1][v1.0.1] (April 5, 2016)
+
+* replace hasish with lodash ([#89][89])
+* automatically parse repo and rev from local repo ([#88][88])
+* stop defaulting to empty string when serializing line numbers
+
 ### [v1.0.0][v1.0.0] (March 2, 2016)
 
 * update to JSON API ([#86][86])
@@ -42,6 +48,9 @@
 [84]:https://github.com/airbrake/node-airbrake/pull/84
 [85]:https://github.com/airbrake/node-airbrake/pull/85
 [86]:https://github.com/airbrake/node-airbrake/pull/86
+[88]:https://github.com/airbrake/node-airbrake/pull/88
+[89]:https://github.com/airbrake/node-airbrake/pull/89
 [v0.4.0]: https://github.com/airbrake/node-airbrake/releases/tag/v0.4.0
 [v0.4.1]: https://github.com/airbrake/node-airbrake/releases/tag/v0.4.1
 [v1.0.0]: https://github.com/airbrake/node-airbrake/releases/tag/v1.0.0
+[v1.0.1]: https://github.com/airbrake/node-airbrake/releases/tag/v1.0.1
