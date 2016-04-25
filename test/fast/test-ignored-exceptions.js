@@ -1,13 +1,15 @@
 var common = require('../common');
 var assert = require('assert');
 var sinon = require('sinon');
+var Airbrake = require(common.dir.root);
 
-function MyError(){
+function MyError() {
   var temp = Error.apply(this, arguments);
   temp.name = this.name = 'MyError';
   this.stack = temp.stack;
-  this.message = temp.message
+  this.message = temp.message;
 }
+
 MyError.prototype = Object.create(Error.prototype, {
   constructor: {
     value: MyError
@@ -15,7 +17,7 @@ MyError.prototype = Object.create(Error.prototype, {
 });
 
 (function testAddingExceptionToIgnoredExceptions() {
-  var airbrake = require(common.dir.root).createClient(null, common.key, 'production');
+  var airbrake = Airbrake.createClient(null, common.key, 'production');
   airbrake.ignoredExceptions.push(MyError);
 
   sinon.stub(airbrake, '_sendRequest');
@@ -24,4 +26,4 @@ MyError.prototype = Object.create(Error.prototype, {
 
   assert.ok(!airbrake._sendRequest.called);
   airbrake._sendRequest.restore();
-})();
+}());

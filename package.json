@@ -28,22 +28,25 @@
     "node": "*"
   },
   "scripts": {
-    "test": "nsp check && test/run.js"
+    "lint": "eslint .",
+    "test": "nsp check && test/run.js",
+    "posttest": "npm run lint"
   },
   "dependencies": {
     "json-stringify-safe": "~5.0.0",
     "lodash": "^4.6.1",
     "request": "~2.69.0",
     "stack-trace": "~0.0.6",
-    "sync-exec": "^0.6.2",
-    "xmlbuilder": "~0.4.2"
+    "sync-exec": "^0.6.2"
   },
   "devDependencies": {
+    "eslint": "~2.8.0",
+    "eslint-config-airbnb-base": "~1.0.3",
+    "eslint-plugin-import": "~1.5.0",
     "express": "~4.13.4",
     "far": "~0.0.4",
     "mockery": "~1.4.0",
     "nsp": "~2.2.0",
-    "semver": "*",
     "sinon": "~1.7.2"
   },
   "optionalDependencies": {},
