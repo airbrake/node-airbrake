@@ -3,11 +3,10 @@ var Airbrake = require(common.dir.root);
 var airbrake = Airbrake.createClient(null, common.key);
 var sinon = require('sinon');
 var assert = require('assert');
+var execSync = require('sync-exec');
 
 var spy = sinon.spy();
-airbrake.trackDeployment({
-  rev: '98103a8fa850d5eaf3666e419d8a0a93e535b1b2'
-}, spy);
+airbrake.trackDeployment({}, spy);
 
 process.on('exit', function () {
   assert.strictEqual(spy.args[0][0], null);
@@ -18,6 +17,18 @@ process.on('exit', function () {
     'rev',
     'repo'
   ]);
-  assert.equal(spy.args[0][1].repo, 'git@github.com:airbrake/node-airbrake.git');
-  assert.equal(spy.args[0][1].rev, '98103a8fa850d5eaf3666e419d8a0a93e535b1b2');
+
+  var expectedRepo = execSync('git config --get remote.origin.url')
+    .stdout
+    .toString()
+    .slice(0, -1);
+
+  var expectedRev = execSync('git rev-parse HEAD')
+    .stdout
+    .toString()
+    .slice(0, -1);
+
+
+  assert.equal(spy.args[0][1].repo, expectedRepo);
+  assert.equal(spy.args[0][1].rev, expectedRev);
 });
