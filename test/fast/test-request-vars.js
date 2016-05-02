@@ -1,8 +1,6 @@
 var common = require('../common');
-var airbrake = require(common.dir.root).createClient()
+var airbrake = require(common.dir.root).createClient();
 var assert = require('assert');
-var xmlbuilder = require('xmlbuilder');
-var os = require('os');
 
 (function testSettingCustomExclusions() {
   var err = new Error();
@@ -12,7 +10,7 @@ var os = require('os');
 
   var cgiData = airbrake.environmentJSON(err);
   assert(!cgiData['err.domain']);
-})();
+}());
 
 (function testCgiDataFromProcessEnv() {
   var err = new Error();
@@ -28,7 +26,7 @@ var os = require('os');
   assert.ok(cgiData['process.memoryUsage'].rss);
   assert.equal(cgiData['os.loadavg'].length, 3);
   assert.equal(typeof cgiData['os.uptime'], 'number');
-})();
+}());
 
 (function testCustomErrorProperties() {
   var err = new Error();
@@ -36,63 +34,62 @@ var os = require('os');
 
   var cgiData = airbrake.environmentJSON(err);
   assert.equal(cgiData['err.myKey'], err.myKey);
-})();
+}());
 
-(function testWhitelistKeys(){
+(function testWhitelistKeys() {
   var err = new Error();
   err.myKey = 'some value';
 
-  airbrake.whiteListKeys.push("PWD");
+  airbrake.whiteListKeys.push('PWD');
   var cgiData = airbrake.environmentJSON(err);
-  assert.equal(typeof cgiData['PWD'], 'string');
-  assert.equal(cgiData['PATH'], '[FILTERED]');
+  assert.equal(typeof cgiData.PWD, 'string');
+  assert.equal(cgiData.PATH, '[FILTERED]');
   airbrake.whiteListKeys = [];
-})();
+}());
 
-(function testBlacklistKeys(){
+(function testBlacklistKeys() {
   var err = new Error();
   err.myKey = 'some value';
 
-  airbrake.blackListKeys.push("PWD");
+  airbrake.blackListKeys.push('PWD');
   var cgiData = airbrake.environmentJSON(err);
-  assert.equal(cgiData['PWD'], '[FILTERED]');
-  assert.equal(typeof cgiData['PATH'], 'string');
-  airbrake.blackListKeys = []
-})();
+  assert.equal(cgiData.PWD, '[FILTERED]');
+  assert.equal(typeof cgiData.PATH, 'string');
+  airbrake.blackListKeys = [];
+}());
 
 (function testSessionVars() {
   var err = new Error();
-  err.session = {foo: 'bar'};
+  err.session = { foo: 'bar' };
 
   var session = airbrake.sessionVars(err);
   assert.deepEqual(session, err.session);
-})();
+}());
 
 (function testParamsVars() {
   var err = new Error();
-  err.params = {foo: 'bar'};
+  err.params = { foo: 'bar' };
 
   var params = airbrake.paramsVars(err);
   assert.deepEqual(params, err.params);
-})();
+}());
 
 (function testCircularVars() {
-  var vars = {foo: 'bar', circular: {}};
+  var vars = { foo: 'bar', circular: {} };
   vars.circular.self = vars.circular;
   var err = new Error();
   err.params = vars;
 
   // test that no exception is thrown
   airbrake.notifyJSON(err);
-})();
+}());
 
 (function testAppendErrorXmlWithBadStack() {
-  var notice = xmlbuilder.create().begin('notice');
   var err = new Error('oh oh');
 
   err.stack += '\n    at Array.0 (native)';
   airbrake.notifyJSON(err);
-})();
+}());
 
 (function testEmptyErrorMessageDoesNotProduceInvalidXml() {
   // see: https://github.com/felixge/node-airbrake/issues/15
@@ -100,4 +97,4 @@ var os = require('os');
   var xml = airbrake.notifyJSON(err, true);
 
   assert.ok(!/<\/>/.test(xml));
-})();
+}());

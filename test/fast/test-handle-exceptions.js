@@ -39,7 +39,7 @@ var sinon = require('sinon');
 
     process.exit.restore();
     airbrake.log.restore();
-  })();
+  }());
 
   (function testNotifyError() {
     sinon.stub(airbrake, 'log');
@@ -53,12 +53,12 @@ var sinon = require('sinon');
     assert.ok(process.exit.calledWith(1));
 
     process.exit.restore();
-  })();
+  }());
 
   airbrake.log.restore();
   airbrake.notify.restore();
   process.on.restore();
-})();
+}());
 
 (function testDoNotKillProcessAfterUnhandledException() {
   sinon.stub(process, 'on');
@@ -79,4 +79,4 @@ var sinon = require('sinon');
   airbrake.log.restore();
   airbrake.notify.restore();
   process.on.restore();
-})();
+}());

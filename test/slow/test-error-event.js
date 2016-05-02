@@ -3,28 +3,28 @@ var airbrake = require(common.dir.root).createClient(null, common.key, 'producti
 var assert = require('assert');
 var http = require('http');
 
-var server = http.createServer(function(req, res) {
+var server = http.createServer(function (req, res) {
   res.writeHead(500);
   res.end('something went wrong');
 });
 
-
-server.listen(common.port, function() {
-  var err = new Error('test-notify');
+server.listen(common.port, function () {
+  var testNotifyError = new Error('test-notify');
   airbrake.serviceHost = 'localhost:' + common.port;
   airbrake.protocol = 'http';
 
-  var errorTimeout = setTimeout(function () {
-    errorTimeout = null
-    if (!errorProcessed) {
-      assert.ok(false, 'should have processed error before timeout of 5s')
-    }
-  }, 5000)
-
   var errorProcessed = false;
+
+  var errorTimeout = setTimeout(function () {
+    errorTimeout = null;
+    if (!errorProcessed) {
+      assert.ok(false, 'should have processed error before timeout of 5s');
+    }
+  }, 5000);
+
   airbrake.on('error', function (err) {
-    errorProcessed = true
-    if (null !== errorTimeout) {
+    errorProcessed = true;
+    if (errorTimeout !== null) {
       clearTimeout(errorTimeout);
     }
 
@@ -33,5 +33,5 @@ server.listen(common.port, function() {
     server.close();
   });
 
-  airbrake.notify(err);
+  airbrake.notify(testNotifyError);
 });

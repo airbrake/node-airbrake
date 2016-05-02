@@ -1,3 +1,7 @@
+// Ignore rules for initialization file.
+/* eslint global-require: 0 */
+/* eslint import/no-unresolved: 0 */
+
 var path = require('path');
 var _ = require('lodash');
 
@@ -8,12 +12,12 @@ exports.projectId = '122374';
 // Use custom config if available instead
 try {
   _.merge(exports, require('./config'));
-} catch (e) {}
+} catch (e) { console.log(e); }
 
 exports.port = 8424;
 
 var root = path.join(__dirname, '..');
 exports.dir = {
   root: root,
-  lib: root + '/lib',
+  lib: root + '/lib'
 };
