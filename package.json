@@ -42,7 +42,7 @@
   "devDependencies": {
     "eslint": "~2.8.0",
     "eslint-config-airbnb-base": "~1.0.3",
-    "eslint-plugin-import": "~1.5.0",
+    "eslint-plugin-import": "~1.6.1",
     "express": "~4.13.4",
     "far": "~0.0.4",
     "mockery": "~1.4.0",
