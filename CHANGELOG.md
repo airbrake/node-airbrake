@@ -2,6 +2,11 @@
 
 ### master
 
+### [v1.0.2][v1.0.2] (May 26, 2016)
+
+* Change notifier name from `airbrake` to `node-airbrake`
+  ([#96](https://github.com/airbrake/node-airbrake/pull/96))
+
 ### [v1.0.1][v1.0.1] (April 5, 2016)
 
 * replace hasish with lodash ([#89][89])
@@ -54,3 +59,4 @@
 [v0.4.1]: https://github.com/airbrake/node-airbrake/releases/tag/v0.4.1
 [v1.0.0]: https://github.com/airbrake/node-airbrake/releases/tag/v1.0.0
 [v1.0.1]: https://github.com/airbrake/node-airbrake/releases/tag/v1.0.1
+[v1.0.2]: https://github.com/airbrake/node-airbrake/releases/tag/v1.0.2
