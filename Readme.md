@@ -1,6 +1,8 @@
-# Airbrake
+Node Airbrake
+=============
 
 [![Circle CI](https://circleci.com/gh/airbrake/node-airbrake.svg?style=shield)](https://circleci.com/gh/airbrake/node-airbrake)
+[![npm version](https://badge.fury.io/js/airbrake.svg)](https://badge.fury.io/js/airbrake)
 
 <img src="http://f.cl.ly/items/1t0F40132D243k1D0d0g/nodejs.jpg" width=800px>
 
