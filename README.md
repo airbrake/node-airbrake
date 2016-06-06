@@ -3,6 +3,10 @@ Node Airbrake
 
 [![Circle CI](https://circleci.com/gh/airbrake/node-airbrake.svg?style=shield)](https://circleci.com/gh/airbrake/node-airbrake)
 [![npm version](https://badge.fury.io/js/airbrake.svg)](https://badge.fury.io/js/airbrake)
+[![Documentation Status](http://inch-ci.org/github/airbrake/node-airbrake.svg?branch=master)](http://inch-ci.org/github/airbrake/node-airbrake)
+[![Downloads](https://img.shields.io/npm/dt/airbrake.svg)](https://www.npmjs.com/package/airbrake)
+[![Issue Stats](http://issuestats.com/github/airbrake/node-airbrake/badge/pr?style=flat)](http://issuestats.com/github/airbrake/node-airbrake)
+[![Issue Stats](http://issuestats.com/github/airbrake/node-airbrake/badge/issue?style=flat)](http://issuestats.com/github/airbrake/node-airbrake)
 
 ![Node Airbrake][arthur-node]
 
