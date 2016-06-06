@@ -4,44 +4,89 @@ Node Airbrake
 [![Circle CI](https://circleci.com/gh/airbrake/node-airbrake.svg?style=shield)](https://circleci.com/gh/airbrake/node-airbrake)
 [![npm version](https://badge.fury.io/js/airbrake.svg)](https://badge.fury.io/js/airbrake)
 
-<img src="http://f.cl.ly/items/1t0F40132D243k1D0d0g/nodejs.jpg" width=800px>
+![Node Airbrake][arthur-node]
 
-Node.js client for [airbrake.io](https://airbrake.io).
+* [Node Airbrake README][node-airbrake]
 
-## Install
+Introduction
+------------
 
-``` bash
+_Node Airbrake_ is a Node.js notifier for [Airbrake][airbrake-io], the leading
+exception reporting service. The library provides minimalist API that enables
+the ability to send _any_ Node exception to the Airbrake dashboard. Node
+Airbrake provides out-of-box integration with the Express web framework.
+
+Key features
+------------
+
+![screenshot][]
+
+* Send chosen environment variables (whitelist or blacklist)
+* Detect and fix circular references in error context information
+* Support for all features of the [2.1 notification API][2.1api]
+* Support for [long-stack-traces][]
+* Optional auto-handler for `uncaughtException` events
+* Provides notification URL linking to Airbrake in `notify()` callback
+* Timeout Airbrake requests after 30 seconds, you never know
+
+Installation
+------------
+
+### NPM
+
+Add the Node Airbrake package to your `package.json`:
+
+```js
+{
+  "dependencies": {
+    "airbrake": "~1.0.2"
+  }
+}
+```
+
+### Manual
+
+Invoke the following command from your terminal:
+
+```sh
 npm install airbrake
 ```
 
-## Basic usage
+Examples
+--------
 
-The common use case for this module is to catch all `'uncaughtException'`
+### Basic example
+
+This is the minimal example that you can use to test Node Airbrake with your
+project. The common use case for this module is to catch all `'uncaughtException'`
 events on the `process` object and send them to Airbrake:
 
-``` javascript
-var airbrake = require('airbrake').createClient("your project ID", "your api key");
+```js
+var airbrake = require('airbrake').createClient(
+  '105138', // Project ID
+  'fd04e13d806a90f96614ad8e529b2822' // Project key
+);
 airbrake.handleExceptions();
 
 throw new Error('I am an uncaught exception');
 ```
 
-Please note that the above will re-throw the exception after it has been
-successfully delivered to Airbrake, causing your process to exit with status 1.
+Note: the above will re-throw the exception after it has been successfully
+delivered to Airbrake, causing your process to exit with status 1.
 
-This can optionally be disabled by passing false to `handleExceptions`:
+This can optionally be disabled by passing false to `handleExceptions` (not
+recommended):
 
-``` javascript
+```js
 airbrake.handleExceptions(false);
 ```
 
-You probably never want to use this, unless you fully understand
-the problems with recovering from exceptions.
+### Manual error delivery
 
 If you want more control over the delivery of your errors, you can also
-manually submit errors to Airbrake.
+manually submit errors to Airbrake:
 
-``` javascript
+```js
 var airbrake = require('airbrake').createClient("your project ID", "your api key");
 var err = new Error('Something went terribly wrong');
 airbrake.notify(err, function(err, url) {
@@ -54,48 +99,36 @@ airbrake.notify(err, function(err, url) {
 By default only the errors from the production environment will get reported,
 so make sure to put `production` in your `NODE_ENV`.
 
-### Usage with Express
+### Express integration
 
-A custom error handler will need to be set for Express:
+The library provides out-of-box integration with the Express framework. It
+supports even old Express versions (starting from `2.x`). Select your version
+below and configure accordingly.
 
-Express 4.X
-```javascript
+#### Express 4.x
+
+```js
 var airbrake = require('airbrake').createClient("your project ID", "your api key");
 app.use(airbrake.expressHandler());
 ```
 
-Express 3.X
-``` javascript
+#### Express 3.x
+
+```js
 var airbrake = require('airbrake').createClient("your project ID", "your api key");
 app.use(app.router);
 app.use(airbrake.expressHandler());
 ```
 
-Express 2.X
-``` javascript
+#### Express 2.x
+
+```js
 var airbrake = require('airbrake').createClient("your project ID", "your api key");
 app.error(airbrake.expressHandler());
 ```
 
-## Screenshot
-
-This screenshot shows an Airbrake error send from this module:
-
-![screenshot](https://github.com/airbrake/node-airbrake/raw/master/screenshot.png)
-
-## Features
-
-* Send chosen environment variables (whitelist or blacklist)
-* Detect and fix circular references in error context information
-* Support for all features of the [2.1 notification API][2.1api]
-* Support for [long-stack-traces][]
-* Optional auto-handler for `uncaughtException` events
-* Provides notification url linking to Airbrake in `notify()` callback
-* Timeout Airbrake requests after 30 seconds, you never know
-
-[long-stack-traces]: https://github.com/tlrobinson/long-stack-traces
-
-[2.1api]: http://help.airbrake.io/kb/api-2/notifier-api-version-21
+API
+---
 
 ## Adding context to errors
 
@@ -163,9 +196,8 @@ airbrake.trackDeployment(deployment, function(err, params) {
 Check out the `airbrake.trackDeployment()` API docs below for a list of all
 options.
 
-[deployment tracking]: http://help.airbrake.io/kb/api-2/deploy-tracking
-
-## API
+Configuration
+-------------
 
 ### var airbrake = Airbrake.createClient(projectId, key, [env])
 
@@ -265,17 +297,16 @@ options:
 * `repo:` The github url of this repository. Defaults to `git config --get remote.origin.url`.
 * `rev:` The revision of this deployment. Defaults to `git rev-parse HEAD`.
 
-## Contribute
+License
+-------
 
-If you have feature ideas, please open an issue first, so we can discuss
-it.
+The library was originally created by [Felix Geisendörfer](https://github.com/felixge).
+The project uses the MIT License. See LICENSE for details.
 
-## Contributors
-
-Originally created by [Felix Geisendörfer](https://github.com/felixge).
-
-See all [contributors](https://github.com/airbrake/node-airbrake/graphs/contributors).
-
-## License
-
-MIT
+[arthur-node]: http://f.cl.ly/items/1t0F40132D243k1D0d0g/nodejs.jpg
+[node-airbrake]: https://github.com/airbrake/node-airbrake
+[airbrake-io]: https://airbrake.io
+[long-stack-traces]: https://github.com/tlrobinson/long-stack-traces
+[2.1api]: http://help.airbrake.io/kb/api-2/notifier-api-version-21
+[screenshot]: https://github.com/airbrake/node-airbrake/raw/master/screenshot.png
+[deployment tracking]: http://help.airbrake.io/kb/api-2/deploy-tracking
