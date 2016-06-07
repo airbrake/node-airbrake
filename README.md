@@ -23,7 +23,7 @@ Airbrake provides out-of-box integration with the Express web framework.
 Key features
 ------------
 
-![screenshot][]
+![The Airbrake Dashboard][dashboard]
 
 * Send chosen environment variables (whitelist or blacklist)
 * Detect and fix circular references in error context information
@@ -307,10 +307,11 @@ License
 The library was originally created by [Felix Geisendörfer](https://github.com/felixge).
 The project uses the MIT License. See LICENSE for details.
 
-[arthur-node]: http://f.cl.ly/items/1t0F40132D243k1D0d0g/nodejs.jpg
+[arthur-node]: http://s3.amazonaws.com/airbrake-github-assets/node-airbrake/arthur-node.jpeg
 [node-airbrake]: https://github.com/airbrake/node-airbrake
 [airbrake-io]: https://airbrake.io
 [long-stack-traces]: https://github.com/tlrobinson/long-stack-traces
 [2.1api]: http://help.airbrake.io/kb/api-2/notifier-api-version-21
 [screenshot]: https://github.com/airbrake/node-airbrake/raw/master/screenshot.png
 [deployment tracking]: http://help.airbrake.io/kb/api-2/deploy-tracking
+[dashboard]: http://s3.amazonaws.com/airbrake-github-assets/node-airbrake/airbrake-dashboard.png
