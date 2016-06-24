@@ -2,6 +2,11 @@
 
 ### master
 
+### [v1.0.3][v1.0.3] (June 24, 2016)
+
+* Stopped depending on `lodash` and started depending on `lodash.merge`
+  ([#102](https://github.com/airbrake/node-airbrake/pull/102))
+
 ### [v1.0.2][v1.0.2] (May 26, 2016)
 
 * Change notifier name from `airbrake` to `node-airbrake`
@@ -60,3 +65,4 @@
 [v1.0.0]: https://github.com/airbrake/node-airbrake/releases/tag/v1.0.0
 [v1.0.1]: https://github.com/airbrake/node-airbrake/releases/tag/v1.0.1
 [v1.0.2]: https://github.com/airbrake/node-airbrake/releases/tag/v1.0.2
+[v1.0.3]: https://github.com/airbrake/node-airbrake/releases/tag/v1.0.3
