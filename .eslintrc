@@ -10,6 +10,7 @@
         '_callback',
         '_sendRequest'
       ]
-    }]
+    }],
+    "space-before-function-paren": ["error", "never"]
   }
 }

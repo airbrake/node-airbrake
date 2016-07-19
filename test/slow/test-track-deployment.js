@@ -8,7 +8,7 @@ var execSync = require('sync-exec');
 var spy = sinon.spy();
 airbrake.trackDeployment({}, spy);
 
-process.on('exit', function () {
+process.on('exit', function() {
   assert.strictEqual(spy.args[0][0], null);
   assert.deepEqual(Object.keys(spy.args[0][1]), [
     'key',

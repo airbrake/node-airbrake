@@ -8,7 +8,7 @@ var Airbrake = require(common.dir.root);
   var airbrake = Airbrake.createClient(null, common.key, 'dev');
   sinon.stub(airbrake, '_sendRequest');
 
-  airbrake.addFilter(function (notice) {
+  airbrake.addFilter(function(notice) {
     if (notice.errors[0].message === 'this should not be posted to airbrake') {
       return null;
     }
@@ -16,7 +16,7 @@ var Airbrake = require(common.dir.root);
     return notice;
   });
 
-  var spiedFunc = sinon.spy(function (notice) {
+  var spiedFunc = sinon.spy(function(notice) {
     var modifiedNotice = notice;
 
     modifiedNotice.context.version = '1.2.3';

@@ -13,7 +13,7 @@ circular.circular = circular;
 
 err.params = { some: 'params', circular: circular };
 
-airbrake.on('vars', function (type, vars) {
+airbrake.on('vars', function(type, vars) {
   /* eslint no-param-reassign: 0 */
   delete vars.SECRET;
 });
@@ -21,7 +21,7 @@ airbrake.on('vars', function (type, vars) {
 var spy = sinon.spy();
 airbrake.notify(err, spy);
 
-process.on('exit', function () {
+process.on('exit', function() {
   assert.ok(spy.called);
 
   var error = spy.args[0][0];

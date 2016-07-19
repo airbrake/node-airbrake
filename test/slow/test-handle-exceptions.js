@@ -7,7 +7,7 @@ airbrake.handleExceptions();
 
 sinon.spy(airbrake, 'notify');
 
-process.on('exit', function () {
+process.on('exit', function() {
   var exitCode = (airbrake.notify.called)
     ? 0
     : 1;

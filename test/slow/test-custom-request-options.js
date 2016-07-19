@@ -19,7 +19,7 @@ airbrake.requestOptions = {
   method: 'GET'
 };
 
-airbrake.notify(new Error('the error'), function () {});
+airbrake.notify(new Error('the error'), function() {});
 
 assert(requestStub.calledWith(
   sinon.match.has('myCustomOption', 'myCustomValue').and(
@@ -37,7 +37,7 @@ airbrake.requestOptions = {
 airbrake.trackDeployment({
   repo: Airbrake.PACKAGE.repository.url,
   rev: '98103a8fa850d5eaf3666e419d8a0a93e535b1b2'
-}, function () {});
+}, function() {});
 
 assert(requestStub.calledWith(
   sinon.match.has('myCustomOption2', 'myCustomValue2').and(
