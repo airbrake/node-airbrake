@@ -339,7 +339,7 @@ License
 -------
 
 The library was originally created by [Felix Geisendörfer](https://github.com/felixge).
-The project uses the MIT License. See LICENSE for details.
+The project uses the MIT License. See LICENSE.md for details.
 
 [arthur-node]: http://s3.amazonaws.com/airbrake-github-assets/node-airbrake/arthur-node.jpeg
 [node-airbrake]: https://github.com/airbrake/node-airbrake
