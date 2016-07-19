@@ -12,6 +12,9 @@ module.exports = {
       ]
     }],
     "space-before-function-paren": ["error", "never"],
-    quotes: 0
+    quotes: 0,
+    "no-unused-vars": ["error", {
+      "argsIgnorePattern": "^_"
+    }]
   }
 };
