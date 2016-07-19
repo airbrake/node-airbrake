@@ -83,6 +83,42 @@ recommended):
 airbrake.handleExceptions(false);
 ```
 
+### Filtering errors
+
+There may be some errors thrown in your application that you're not interested in sending to Airbrake, such as errors thrown by 3rd-party libraries.
+
+The Airbrake notifier makes it simple to ignore this chaff while still processing legitimate errors. Add filters to the notifier by providing filter functions to `addFilter`.
+
+`addFilter` accepts the entire [error notice](https://airbrake.io/docs/#create-notice-v3) to be sent to Airbrake, and provides access to the `context`, `environment`, `params`, and `session` values submitted with the notice, as well as the single-element `errors` array with its `backtrace` element and associated backtrace lines.
+
+The return value of the filter function determines whether or not the error notice will be submitted.
+  * If null value is returned, the notice is ignored.
+  * Otherwise returned notice will be submitted.
+
+An error notice must pass all provided filters to be submitted.
+
+In the following example errors triggered with a message of 'this should not be posted to airbrake' will be ignored:
+
+```js
+airbrake.addFilter(function(notice) {
+  if (notice.errors[0].message === 'this should not be posted to airbrake') {
+    // Ignore errors with this messsage
+    return null;
+  }
+  return notice;
+});
+```
+
+Filters can be also used to modify notice payload, e.g. to set environment and application version:
+
+```js
+airbrake.addFilter(function(notice) {
+  notice.context.environment = 'production';
+  notice.context.version = '1.2.3';
+  return notice;
+});
+```
+
 ### Manual error delivery
 
 If you want more control over the delivery of your errors, you can also
