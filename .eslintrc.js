@@ -1,16 +1,17 @@
-{
-  "extends": "airbnb-base/legacy",
-  "rules": {
+module.exports = {
+  extends: "airbnb-base/legacy",
+  rules: {
     "no-console": 0,
     "func-names": 0,
     "vars-on-top": 0,
     "no-underscore-dangle": ["error", {
-      "allow": [
+      allow: [
         '_onError',
         '_callback',
         '_sendRequest'
       ]
     }],
-    "space-before-function-paren": ["error", "never"]
+    "space-before-function-paren": ["error", "never"],
+    quotes: 0
   }
-}
+};
