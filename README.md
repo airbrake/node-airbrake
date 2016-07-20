@@ -30,6 +30,8 @@ Key features
 * Optional auto-handler for `uncaughtException` events
 * Provides notification URL linking to Airbrake in `notify()` callback
 * Timeout Airbrake requests after 30 seconds, you never know
+* Express web application framework support
+* hapi web application framework support
 
 Installation
 ------------
@@ -163,6 +165,28 @@ app.use(airbrake.expressHandler());
 ```js
 var airbrake = require('airbrake').createClient("your project ID", "your api key");
 app.error(airbrake.expressHandler());
+```
+
+### hapi integration
+
+The library provides out-of-box integration with the hapi framework. To
+integrate Airbrake with a hapi application simply install our handler:
+
+```js
+const Hapi = require('hapi');
+const server = new Hapi.Server();
+const Airbrake = require('airbrake').createClient(
+  "your project ID",
+  "your api key"
+);
+
+Airbrake.env = 'production';
+
+server.register(Airbrake.hapiHandler(), err => {
+  if (err) {
+    throw err;
+  }
+});
 ```
 
 API
