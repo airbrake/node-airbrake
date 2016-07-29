@@ -1,7 +1,10 @@
 var common = require('../common');
-var airbrake = require(common.dir.root).createClient(null, common.key, 'production');
+var airbrake = require(common.dir.root).createClient(common.projectId, common.key, 'production');
 var sinon = require('sinon');
 var assert = require('assert');
+var nock = require('nock');
+
+nock.disableNetConnect();
 
 var err = new Error('Node.js just totally exploded on me');
 err.env = { protect: 'the environment!' };
@@ -19,10 +22,15 @@ airbrake.on('vars', function(type, vars) {
 });
 
 var spy = sinon.spy();
+var endpoint = nock('https://api.airbrake.io').
+      post('/api/v3/projects/' + common.projectId + '/notices?key=' + common.key).
+      reply(201, '{"url":"https://airbrake.io/locate/123"}');
+
 airbrake.notify(err, spy);
 
 process.on('exit', function() {
   assert.ok(spy.called);
+  endpoint.done();
 
   var error = spy.args[0][0];
   if (error) {
