@@ -1,6 +1,51 @@
+dependencies:
+  override:
+    - ? |
+        case $CIRCLE_NODE_INDEX in
+          0)
+            nvm install 0.10.46
+            ;;
+          1)
+            nvm install 0.11.16
+            ;;
+          2)
+            nvm install 0.12.15
+            ;;
+          3)
+            nvm install 4.4.7
+            ;;
+          4)
+            nvm install 5.12.0
+            ;;
+          5)
+            nvm install 6.3.1
+            ;;
+        esac
+      :
+        parallel: true
+
 test:
   override:
-    - nvm use 0.10.34 && npm test
-    - nvm use 0.11.8 && npm test
-    - nvm use 4.2.2 && npm test 
-    - nvm use 5.1.0 && npm test
+    - ? |
+        case $CIRCLE_NODE_INDEX in
+          0)
+            nvm use 0.10.46 && npm test
+            ;;
+          1)
+            nvm use 0.11.16 && npm test
+            ;;
+          2)
+            nvm use 0.12.15 && npm test
+            ;;
+          3)
+            nvm use 4.4.7 && npm test
+            ;;
+          4)
+            nvm use 5.12.0 && npm test
+            ;;
+          5)
+            nvm use 6.3.1 && npm test
+            ;;
+        esac
+      :
+        parallel: true
