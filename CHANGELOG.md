@@ -2,6 +2,9 @@
 
 ### master
 
+* Added support for the Hapi framework
+  ([#112](https://github.com/airbrake/node-airbrake/pull/112))
+
 ### [v1.0.3][v1.0.3] (June 24, 2016)
 
 * Stopped depending on `lodash` and started depending on `lodash.merge`
