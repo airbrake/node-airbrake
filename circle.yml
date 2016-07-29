@@ -1,5 +1,6 @@
 dependencies:
   override:
+    - npm install
     - ? |
         case $CIRCLE_NODE_INDEX in
           0)

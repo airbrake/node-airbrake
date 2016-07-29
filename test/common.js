@@ -6,8 +6,8 @@ var path = require('path');
 var merge = require('lodash.merge');
 
 // An account on the free plan specifically for testing this module.
-exports.key = '96979331ec7e18bbe7ec1529da2ed083';
-exports.projectId = '122374';
+exports.key = '81bbff95d52f8856c770bb39e827f3f6';
+exports.projectId = '113743';
 
 // Use custom config if available instead
 try {
