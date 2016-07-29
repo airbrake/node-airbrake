@@ -35,7 +35,7 @@
   "dependencies": {
     "json-stringify-safe": "~5.0.0",
     "lodash.merge": "^4.4.0",
-    "request": "~2.69.0",
+    "request": "~2.74.0",
     "stack-trace": "~0.0.6",
     "sync-exec": "^0.6.2"
   },
