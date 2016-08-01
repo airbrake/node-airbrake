@@ -1,8 +1,11 @@
-# Airbrake Changelog
+Node Airbrake Changelog
+=======================
 
 ### master
 
-* Added support for the Hapi framework
+### [v1.1.0][v1.1.0] (July 30, 2016)
+
+* **IMPORTANT:** Added support for the Hapi framework
   ([#112](https://github.com/airbrake/node-airbrake/pull/112))
 
 ### [v1.0.3][v1.0.3] (June 24, 2016)
@@ -69,3 +72,4 @@
 [v1.0.1]: https://github.com/airbrake/node-airbrake/releases/tag/v1.0.1
 [v1.0.2]: https://github.com/airbrake/node-airbrake/releases/tag/v1.0.2
 [v1.0.3]: https://github.com/airbrake/node-airbrake/releases/tag/v1.0.3
+[v1.1.0]: https://github.com/airbrake/node-airbrake/releases/tag/v1.1.0

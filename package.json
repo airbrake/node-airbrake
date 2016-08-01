@@ -1,6 +1,7 @@
 {
-  "author": "Felix Geisendörfer <felix@debuggable.com> (http://debuggable.com/)",
+  "author": "Airbrake Technologies, Inc.",
   "contributors": [
+    "Felix Geisendörfer <felix@debuggable.com> (http://debuggable.com/)",
     "László Bácsi <lackac@lackac.hu> (http://lackac.hu)",
     "Carlos Brito Lage <carlos@carloslage.net> (http://carloslage.net)",
     "Stephen Celis <me@stephencelis.com> (http://stephencelis.com)",
@@ -16,8 +17,8 @@
     "Johnny Halife <johnny.halife@me.com> (http://johnny.io)"
   ],
   "name": "airbrake",
-  "description": "Node.js client for airbrake.io",
-  "version": "1.0.3",
+  "description": "A Node.js notifier for Airbrake, the leading exception reporting service.",
+  "version": "1.1.0",
   "homepage": "https://github.com/airbrake/node-airbrake",
   "repository": {
     "type": "git",
