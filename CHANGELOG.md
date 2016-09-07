@@ -3,6 +3,9 @@ Node Airbrake Changelog
 
 ### master
 
+* Removed the `developmentEnvironments` config option
+  ([#119](https://github.com/airbrake/node-airbrake/pull/112))
+
 ### [v1.1.0][v1.1.0] (July 30, 2016)
 
 * **IMPORTANT:** Added support for the Hapi framework

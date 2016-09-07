@@ -300,10 +300,6 @@ The version of this app. Set to a semantic version number, or leave unset.
 
 The protocol to use.
 
-### airbrake.developmentEnvironments = []
-
-Do not post to Airbrake when running in these environments.
-
 ### airbrake.timeout = 30 * 1000
 
 The timeout after which to give up trying to notify Airbrake in ms.
