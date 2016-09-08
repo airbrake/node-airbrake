@@ -3,8 +3,12 @@ Node Airbrake Changelog
 
 ### master
 
-* Removed the `developmentEnvironments` config option
+### [v1.2.0][v1.2.0] (Semptember 8, 2016)
+
+* **IMPORTANT:** Removed the `developmentEnvironments` config option
   ([#119](https://github.com/airbrake/node-airbrake/pull/112))
+* Express & hapi integrations send `component` and `action` info now
+  ([#120](https://github.com/airbrake/node-airbrake/pull/120))
 
 ### [v1.1.0][v1.1.0] (July 30, 2016)
 
@@ -76,3 +80,4 @@ Node Airbrake Changelog
 [v1.0.2]: https://github.com/airbrake/node-airbrake/releases/tag/v1.0.2
 [v1.0.3]: https://github.com/airbrake/node-airbrake/releases/tag/v1.0.3
 [v1.1.0]: https://github.com/airbrake/node-airbrake/releases/tag/v1.1.0
+[v1.2.0]: https://github.com/airbrake/node-airbrake/releases/tag/v1.2.0
