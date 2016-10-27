@@ -367,5 +367,5 @@ The project uses the MIT License. See LICENSE.md for details.
 [long-stack-traces]: https://github.com/tlrobinson/long-stack-traces
 [2.1api]: http://help.airbrake.io/kb/api-2/notifier-api-version-21
 [screenshot]: https://github.com/airbrake/node-airbrake/raw/master/screenshot.png
-[deployment tracking]: http://help.airbrake.io/kb/api-2/deploy-tracking
+[deployment tracking]: https://airbrake.io/docs/airbrake-faq/deploy-tracking/
 [dashboard]: http://s3.amazonaws.com/airbrake-github-assets/node-airbrake/airbrake-dashboard.png
