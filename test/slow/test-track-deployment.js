@@ -1,6 +1,6 @@
 var common = require('../common');
 var Airbrake = require(common.dir.root);
-var airbrake = Airbrake.createClient(null, common.key);
+var airbrake = Airbrake.createClient(common.projectId, common.key);
 var sinon = require('sinon');
 var assert = require('assert');
 var execSync = require('sync-exec');

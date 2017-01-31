@@ -1,5 +1,5 @@
 var common = require('../common');
-var airbrake = require(common.dir.root).createClient(null, common.key);
+var airbrake = require(common.dir.root).createClient(common.projectId, common.key);
 var sinon = require('sinon');
 
 var err = new Error('test-notify');
