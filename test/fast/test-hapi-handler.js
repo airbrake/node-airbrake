@@ -4,7 +4,7 @@ if (semver.gt(process.version, '4.0.0')) {
   /* eslint-disable global-require */
   var hapi = require('hapi');
   var common = require('../common');
-  var airbrake = require(common.dir.root).createClient(null, common.key);
+  var airbrake = require(common.dir.root).createClient(common.projectId, common.key);
   var assert = require('assert');
   var sinon = require('sinon');
   var http = require('http');
