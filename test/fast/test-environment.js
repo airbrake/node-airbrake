@@ -5,7 +5,7 @@ var sinon = require('sinon');
 var Airbrake = require(common.dir.root);
 
 (function testProductionEnviroment() {
-  var airbrake = Airbrake.createClient(null, common.key, 'production');
+  var airbrake = Airbrake.createClient(common.projectId, common.key, 'production');
   sinon.stub(airbrake, '_sendRequest');
 
   airbrake.notify(new Error('this should be posted to airbrake'));

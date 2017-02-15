@@ -5,7 +5,7 @@ var sinon = require('sinon');
 var Airbrake = require(common.dir.root);
 
 (function testAddFilterFiresOnce() {
-  var airbrake = Airbrake.createClient(null, common.key, 'dev');
+  var airbrake = Airbrake.createClient(common.projectId, common.key, 'dev');
   sinon.stub(airbrake, '_sendRequest');
 
   var filter = sinon.spy(function(notice) { return notice; });
@@ -19,7 +19,7 @@ var Airbrake = require(common.dir.root);
 }());
 
 (function testAddFilterModifiesNotice() {
-  var airbrake = Airbrake.createClient(null, common.key, 'dev');
+  var airbrake = Airbrake.createClient(common.projectId, common.key, 'dev');
   sinon.stub(airbrake, '_sendRequest');
 
   var filter = sinon.spy(function(notice) {
@@ -38,7 +38,7 @@ var Airbrake = require(common.dir.root);
 }());
 
 (function testAddFilterIgnoresNotices() {
-  var airbrake = Airbrake.createClient(null, common.key, 'dev');
+  var airbrake = Airbrake.createClient(common.projectId, common.key, 'dev');
   sinon.stub(airbrake, '_sendRequest');
 
   airbrake.addFilter(function(_notice) { return null; });
@@ -47,7 +47,7 @@ var Airbrake = require(common.dir.root);
 }());
 
 (function testAddFilterStartsExecutionFromOldestFilter() {
-  var airbrake = Airbrake.createClient(null, common.key, 'dev');
+  var airbrake = Airbrake.createClient(common.projectId, common.key, 'dev');
   sinon.stub(airbrake, '_sendRequest');
 
   var nums = [];
@@ -69,7 +69,7 @@ var Airbrake = require(common.dir.root);
 }());
 
 (function testAddFilterStartsExecutionFromOldestFilterButStopsIfShouldIgnore() {
-  var airbrake = Airbrake.createClient(null, common.key, 'dev');
+  var airbrake = Airbrake.createClient(common.projectId, common.key, 'dev');
   sinon.stub(airbrake, '_sendRequest');
 
   var nums = [];

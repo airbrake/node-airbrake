@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 var common = require('../common');
-var airbrake = require(common.dir.root).createClient(null, common.key);
+var airbrake = require(common.dir.root).createClient(common.projectId, common.key);
 var assert = require('assert');
 var sinon = require('sinon');
 var http = require('http');

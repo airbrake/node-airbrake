@@ -17,7 +17,7 @@ MyError.prototype = Object.create(Error.prototype, {
 });
 
 (function testAddingExceptionToIgnoredExceptions() {
-  var airbrake = Airbrake.createClient(null, common.key, 'production');
+  var airbrake = Airbrake.createClient(common.projectId, common.key, 'production');
   airbrake.ignoredExceptions.push(MyError);
 
   sinon.stub(airbrake, '_sendRequest');
