@@ -3,10 +3,16 @@ Node Airbrake Changelog
 
 ### master
 
+### [v1.2.1][v1.2.1] (February 15, 2017)
+
+* Fixed bug when client crashes when tries to notify due to missing `projectId`
+  or `projectKey`. These values are mandatory to create a new client now
+  ([#125](https://github.com/airbrake/node-airbrake/pull/125))
+
 ### [v1.2.0][v1.2.0] (Semptember 8, 2016)
 
 * **IMPORTANT:** Removed the `developmentEnvironments` config option
-  ([#119](https://github.com/airbrake/node-airbrake/pull/112))
+  ([#119](https://github.com/airbrake/node-airbrake/pull/119))
 * Express & hapi integrations send `component` and `action` info now
   ([#120](https://github.com/airbrake/node-airbrake/pull/120))
 
@@ -81,3 +87,4 @@ Node Airbrake Changelog
 [v1.0.3]: https://github.com/airbrake/node-airbrake/releases/tag/v1.0.3
 [v1.1.0]: https://github.com/airbrake/node-airbrake/releases/tag/v1.1.0
 [v1.2.0]: https://github.com/airbrake/node-airbrake/releases/tag/v1.2.0
+[v1.2.1]: https://github.com/airbrake/node-airbrake/releases/tag/v1.2.1
