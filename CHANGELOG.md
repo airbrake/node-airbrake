@@ -3,6 +3,11 @@ Node Airbrake Changelog
 
 ### master
 
+### [v1.2.2][v1.2.2] (March 10, 2017)
+
+* Updated `request` dependency to `^2.81.0`
+  ([#129](https://github.com/airbrake/node-airbrake/pull/129))
+
 ### [v1.2.1][v1.2.1] (February 15, 2017)
 
 * Fixed bug when client crashes when tries to notify due to missing `projectId`
@@ -88,3 +93,4 @@ Node Airbrake Changelog
 [v1.1.0]: https://github.com/airbrake/node-airbrake/releases/tag/v1.1.0
 [v1.2.0]: https://github.com/airbrake/node-airbrake/releases/tag/v1.2.0
 [v1.2.1]: https://github.com/airbrake/node-airbrake/releases/tag/v1.2.1
+[v1.2.2]: https://github.com/airbrake/node-airbrake/releases/tag/v1.2.2

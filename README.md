@@ -43,7 +43,7 @@ Add the Node Airbrake package to your `package.json`:
 ```js
 {
   "dependencies": {
-    "airbrake": "~1.2.0"
+    "airbrake": "^1.2.2"
   }
 }
 ```

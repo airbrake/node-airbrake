@@ -18,7 +18,7 @@
   ],
   "name": "airbrake",
   "description": "A Node.js notifier for Airbrake, the leading exception reporting service.",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "homepage": "https://github.com/airbrake/node-airbrake",
   "repository": {
     "type": "git",
