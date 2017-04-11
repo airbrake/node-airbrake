@@ -43,7 +43,7 @@ Add the Node Airbrake package to your `package.json`:
 ```js
 {
   "dependencies": {
-    "airbrake": "^1.2.2"
+    "airbrake": "^1.3.0"
   }
 }
 ```
@@ -354,6 +354,14 @@ options:
 * `user:` The user doing the deployment, defaults to `process.env.USER`.
 * `repo:` The github url of this repository. Defaults to `git config --get remote.origin.url`.
 * `rev:` The revision of this deployment. Defaults to `git rev-parse HEAD`.
+
+Additional notes
+----------------
+
+### Exception limit
+
+The maximum size of an exception is 64KB. Exceptions that exceed this limit will
+be truncated to fit the size.
 
 License
 -------
