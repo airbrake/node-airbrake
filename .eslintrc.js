@@ -8,13 +8,16 @@ module.exports = {
       allow: [
         '_onError',
         '_callback',
-        '_sendRequest'
+        '_sendRequest',
+        '__type'
       ]
     }],
     "space-before-function-paren": ["error", "never"],
     quotes: 0,
     "no-unused-vars": ["error", {
       "argsIgnorePattern": "^_"
-    }]
+    }],
+    "no-restricted-syntax": 0,
+    "no-param-reassign": 0
   }
 };
