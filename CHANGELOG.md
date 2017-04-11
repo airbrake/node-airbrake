@@ -3,6 +3,12 @@ Node Airbrake Changelog
 
 ### master
 
+### [v1.3.0][v1.3.0] (April 11, 2017)
+
+* Implemented payload truncation (notices over 64KB are not accepted by the
+  Airbrake API and will be truncated to fit the
+  limit) ([#134](https://github.com/airbrake/node-airbrake/pull/134))
+
 ### [v1.2.2][v1.2.2] (March 10, 2017)
 
 * Updated `request` dependency to `^2.81.0`
@@ -94,3 +100,4 @@ Node Airbrake Changelog
 [v1.2.0]: https://github.com/airbrake/node-airbrake/releases/tag/v1.2.0
 [v1.2.1]: https://github.com/airbrake/node-airbrake/releases/tag/v1.2.1
 [v1.2.2]: https://github.com/airbrake/node-airbrake/releases/tag/v1.2.2
+[v1.3.0]: https://github.com/airbrake/node-airbrake/releases/tag/v1.3.0
