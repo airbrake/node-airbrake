@@ -34,7 +34,6 @@
     "posttest": "npm run lint"
   },
   "dependencies": {
-    "json-stringify-safe": "~5.0.0",
     "lodash.merge": "^4.4.0",
     "request": "^2.81.0",
     "stack-trace": "~0.0.6"
