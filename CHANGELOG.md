@@ -6,6 +6,8 @@ Node Airbrake Changelog
 * **IMPORTANT:** dropped support for Node.js <= v0.12
 * Dropped `sync-exec` dependency in favour of native `child_process.execSync`
   ([#137](https://github.com/airbrake/node-airbrake/pull/137))
+* Dropped `json-stringify-safe` dependency in favour of native `JSON.stringify`
+  ([#138](https://github.com/airbrake/node-airbrake/pull/138))
 
 ### [v1.3.0][v1.3.0] (April 11, 2017)
 
