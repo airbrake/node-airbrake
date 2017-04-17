@@ -3,6 +3,9 @@ Node Airbrake Changelog
 
 ### master
 
+* Dropped `sync-exec` dependency in favour of native `child_process.execSync`
+  ([#137](https://github.com/airbrake/node-airbrake/pull/137))
+
 ### [v1.3.0][v1.3.0] (April 11, 2017)
 
 * Implemented payload truncation (notices over 64KB are not accepted by the
