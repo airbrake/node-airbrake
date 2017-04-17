@@ -3,6 +3,7 @@ Node Airbrake Changelog
 
 ### master
 
+* **IMPORTANT:** dropped support for Node.js <= v0.12
 * Dropped `sync-exec` dependency in favour of native `child_process.execSync`
   ([#137](https://github.com/airbrake/node-airbrake/pull/137))
 
