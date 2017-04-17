@@ -5,6 +5,14 @@ var airbrake = require(common.dir.root).createClient(common.projectId, common.ke
 var assert = require('assert');
 var sinon = require('sinon');
 var http = require('http');
+var nock = require('nock');
+
+nock.disableNetConnect();
+nock.enableNetConnect('localhost:' + common.port);
+
+var endpoint = nock('https://api.airbrake.io').
+      post('/api/v3/projects/' + common.projectId + '/notices?key=' + common.key).
+      reply(201, '{"url":"https://airbrake.io/locate/123"}');
 
 sinon.spy(airbrake, '_onError');
 
@@ -33,11 +41,13 @@ http.request({
 }, function() {
   assert.equal(airbrake._onError.getCall(0).args[0].ua, 'foo');
   assert.equal(airbrake._onError.callCount, 1);
+
   http.request({
     port: common.port,
     path: '/uncaught'
   }, function() {
     assert.equal(airbrake._onError.callCount, 2);
+    endpoint.done();
     process.exit();
   }).end();
 }).end();
