@@ -1,4 +1,4 @@
-var common = require('../common');
+var common = require('./common');
 var assert = require('assert');
 var Airbrake = require(common.dir.root);
 
@@ -19,4 +19,3 @@ var Airbrake = require(common.dir.root);
     Airbrake.createClient(null, common.key);
   });
 }());
-

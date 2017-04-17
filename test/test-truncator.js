@@ -1,6 +1,6 @@
 /* eslint-disable */
 
-var common = require('../common');
+var common = require('./common');
 var assert = require('assert');
 var truncator = require(common.dir.root + '/lib/truncator');
 
