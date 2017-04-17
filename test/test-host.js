@@ -1,4 +1,4 @@
-var common = require('../common');
+var common = require('./common');
 var airbrake = require(common.dir.root).createClient(common.projectId, common.key);
 var assert = require('assert');
 var os = require('os');

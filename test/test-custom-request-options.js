@@ -1,6 +1,6 @@
 var mockery = require('mockery');
 var sinon = require('sinon');
-var common = require('../common');
+var common = require('./common');
 var assert = require('assert');
 
 mockery.enable({

@@ -1,4 +1,4 @@
-var common = require('../common');
+var common = require('./common');
 var airbrake = require(common.dir.root).createClient('1234', 'invalid', 'production');
 var assert = require('assert');
 var nock = require('nock');
