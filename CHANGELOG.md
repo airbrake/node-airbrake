@@ -3,6 +3,8 @@ Node Airbrake Changelog
 
 ### master
 
+### [v2.0.0][v2.0.0] (April 17, 2017)
+
 * **IMPORTANT:** dropped support for Node.js <= v0.12
 * Dropped `sync-exec` dependency in favour of native `child_process.execSync`
   ([#137](https://github.com/airbrake/node-airbrake/pull/137))
@@ -107,3 +109,4 @@ Node Airbrake Changelog
 [v1.2.1]: https://github.com/airbrake/node-airbrake/releases/tag/v1.2.1
 [v1.2.2]: https://github.com/airbrake/node-airbrake/releases/tag/v1.2.2
 [v1.3.0]: https://github.com/airbrake/node-airbrake/releases/tag/v1.3.0
+[v2.0.0]: https://github.com/airbrake/node-airbrake/releases/tag/v2.0.0
