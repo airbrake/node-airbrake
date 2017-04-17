@@ -34,9 +34,9 @@
     "posttest": "npm run lint"
   },
   "dependencies": {
-    "lodash.merge": "^4.4.0",
+    "lodash.merge": "^4.6.0",
     "request": "^2.81.0",
-    "stack-trace": "~0.0.6"
+    "stack-trace": "^0.0.9"
   },
   "devDependencies": {
     "eslint": "~2.8.0",
