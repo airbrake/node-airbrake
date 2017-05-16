@@ -139,6 +139,19 @@ airbrake.notify(err, function(err, url) {
 By default only the errors from the production environment will get reported,
 so make sure to put `production` in your `NODE_ENV`.
 
+### Severity
+
+[Severity](https://airbrake.io/docs/airbrake-faq/what-is-severity/) allows
+categorizing how severe an error is. By default, it's set to `error`. To
+redefine severity, simply set an error's `severity` property. For example:
+
+```js
+var err = new Error();
+err.severity = 'critical';
+
+airbrake.notify(err);
+```
+
 ### Express integration
 
 The library provides out-of-box integration with the Express framework. It
@@ -200,6 +213,7 @@ each delivered error:
 * **error.class:** (`err.type` string if set, or `'Error'`)
 * **error.message:** (`err.message` string)
 * **error.backtrace:** (`err.stack` as parsed by [stack-trace][])
+* **error.severity:** (`err.severity` defaults to `error`)
 * **request.url:** (`err.url`, see `airbrake.url`);
 * **request.component:** (`err.component` string if set);
 * **request.action:** (`err.action` string if set);
