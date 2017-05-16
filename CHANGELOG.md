@@ -3,6 +3,11 @@ Node Airbrake Changelog
 
 ### master
 
+### [v2.0.1][v2.0.1] (May 16, 2017)
+
+* Started sending error severity (defaults to `error`)
+  ([#143](https://github.com/airbrake/node-airbrake/pull/143))
+
 ### [v2.0.0][v2.0.0] (April 17, 2017)
 
 * **IMPORTANT:** dropped support for Node.js <= v0.12
@@ -110,3 +115,4 @@ Node Airbrake Changelog
 [v1.2.2]: https://github.com/airbrake/node-airbrake/releases/tag/v1.2.2
 [v1.3.0]: https://github.com/airbrake/node-airbrake/releases/tag/v1.3.0
 [v2.0.0]: https://github.com/airbrake/node-airbrake/releases/tag/v2.0.0
+[v2.0.1]: https://github.com/airbrake/node-airbrake/releases/tag/v2.0.1
