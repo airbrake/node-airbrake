@@ -136,9 +136,6 @@ airbrake.notify(err, function(err, url) {
 });
 ```
 
-By default only the errors from the production environment will get reported,
-so make sure to put `production` in your `NODE_ENV`.
-
 ### Severity
 
 [Severity](https://airbrake.io/docs/airbrake-faq/what-is-severity/) allows
