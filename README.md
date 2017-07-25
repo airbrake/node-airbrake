@@ -337,6 +337,12 @@ Registers a `process.on('uncaughtException')` listener. When an uncaught
 exception occurs, the error is sent to Airbrake, and then re-thrown to
 kill the process.
 
+### airbrake.handlePromiseRejections()
+
+Registers a `process.on('unhandledRejection')` listener. When an uncaught
+exception occurs inside a promise, the error is sent to Airbrake, and then re-thrown to
+kill the process.
+
 ### airbrake.expressHandler(disableUncaughtException)
 
 A custom error handler that is used with Express. Integrate with Express
