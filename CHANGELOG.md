@@ -3,6 +3,9 @@ Node Airbrake Changelog
 
 ### master
 
+* Added `airbrake.handlePromiseRejections()`
+  ([#147](https://github.com/airbrake/node-airbrake/pull/147))
+
 ### [v2.0.1][v2.0.1] (May 16, 2017)
 
 * Started sending error severity (defaults to `error`)
@@ -116,3 +119,4 @@ Node Airbrake Changelog
 [v1.3.0]: https://github.com/airbrake/node-airbrake/releases/tag/v1.3.0
 [v2.0.0]: https://github.com/airbrake/node-airbrake/releases/tag/v2.0.0
 [v2.0.1]: https://github.com/airbrake/node-airbrake/releases/tag/v2.0.1
+[v2.1.0]: https://github.com/airbrake/node-airbrake/releases/tag/v2.1.0
