@@ -3,6 +3,8 @@ Node Airbrake Changelog
 
 ### master
 
+### [v2.1.0][v2.1.0] (July 25, 2017)
+
 * Added `airbrake.handlePromiseRejections()`
   ([#147](https://github.com/airbrake/node-airbrake/pull/147))
 
