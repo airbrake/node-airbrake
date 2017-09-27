@@ -3,6 +3,8 @@ Node Airbrake Changelog
 
 ### master
 
+### [v2.1.1][v2.1.1] (September 27, 2017)
+
 * NODE AIRBRAKE IS DEPRECATED IN FAVOUR OF AIRBRAKE JS
   (https://github.com/airbrake/airbrake-js)
   ([#152](https://github.com/airbrake/node-airbrake/pull/152))
@@ -126,3 +128,4 @@ Node Airbrake Changelog
 [v2.0.0]: https://github.com/airbrake/node-airbrake/releases/tag/v2.0.0
 [v2.0.1]: https://github.com/airbrake/node-airbrake/releases/tag/v2.0.1
 [v2.1.0]: https://github.com/airbrake/node-airbrake/releases/tag/v2.1.0
+[v2.1.1]: https://github.com/airbrake/node-airbrake/releases/tag/v2.1.1
