@@ -3,6 +3,10 @@ Node Airbrake Changelog
 
 ### master
 
+* NODE AIRBRAKE IS DEPRECATED IN FAVOUR OF AIRBRAKE JS
+  (https://github.com/airbrake/airbrake-js)
+  ([#152](https://github.com/airbrake/node-airbrake/pull/152))
+
 ### [v2.1.0][v2.1.0] (July 25, 2017)
 
 * Added `airbrake.handlePromiseRejections()`

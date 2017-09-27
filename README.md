@@ -6,12 +6,20 @@ Node Airbrake
 [![Documentation Status](http://inch-ci.org/github/airbrake/node-airbrake.svg?branch=master)](http://inch-ci.org/github/airbrake/node-airbrake)
 [![Downloads](https://img.shields.io/npm/dt/airbrake.svg)](https://www.npmjs.com/package/airbrake)
 
+**DEPRECATION WARNING: Node Airbrake is deprecated in favour of Airbrake JS
+(https://github.com/airbrake/airbrake-js). Please migrate to it as soon as
+possible.**
+
 ![Node Airbrake][arthur-node]
 
 * [Node Airbrake README][node-airbrake]
 
 Introduction
 ------------
+
+**DEPRECATION WARNING: Node Airbrake is deprecated in favour of Airbrake JS
+(https://github.com/airbrake/airbrake-js). Please migrate to it as soon as
+possible.**
 
 _Node Airbrake_ is a Node.js notifier for [Airbrake][airbrake-io], the leading
 exception reporting service. The library provides minimalist API that enables
