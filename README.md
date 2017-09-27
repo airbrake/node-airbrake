@@ -8,7 +8,7 @@ Node Airbrake
 
 **DEPRECATION WARNING: Node Airbrake is deprecated in favour of Airbrake JS
 (https://github.com/airbrake/airbrake-js). Please migrate to it as soon as
-possible.**
+possible. See [migration guide](/MIGRATION_GUIDE_TO_AIRBRAKE_JS.md).**
 
 ![Node Airbrake][arthur-node]
 
