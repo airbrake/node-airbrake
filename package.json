@@ -17,8 +17,8 @@
     "Johnny Halife <johnny.halife@me.com> (http://johnny.io)"
   ],
   "name": "airbrake",
-  "description": "DEPRECATION: please use airbrake-js instead (https://github.com/airbrake/airbrake-js). A Node.js notifier for Airbrake, the leading exception reporting service.",
-  "version": "2.1.1",
+  "description": "DEPRECATION: please use @airbrake/node instead (https://www.npmjs.com/package/@airbrake/node). A Node.js notifier for Airbrake, the leading exception reporting service.",
+  "version": "2.1.2",
   "homepage": "https://github.com/airbrake/node-airbrake",
   "repository": {
     "type": "git",
