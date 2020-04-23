@@ -6,9 +6,9 @@ Node Airbrake
 [![Documentation Status](http://inch-ci.org/github/airbrake/node-airbrake.svg?branch=master)](http://inch-ci.org/github/airbrake/node-airbrake)
 [![Downloads](https://img.shields.io/npm/dt/airbrake.svg)](https://www.npmjs.com/package/airbrake)
 
-**DEPRECATION WARNING: Node Airbrake is deprecated in favour of Airbrake JS
-(https://github.com/airbrake/airbrake-js). Please migrate to it as soon as
-possible. See [migration guide](/MIGRATION_GUIDE_TO_AIRBRAKE_JS.md).**
+**DEPRECATION WARNING: Node Airbrake is deprecated in favour of @airbrake/node
+(https://www.npmjs.com/package/@airbrake/node). Please migrate to it as soon as
+possible. See [migration guide](https://airbrake.io/docs/performance-monitoring/updating-from-deprecated-libraries-for-node/).**
 
 ![Node Airbrake][arthur-node]
 
@@ -17,8 +17,8 @@ possible. See [migration guide](/MIGRATION_GUIDE_TO_AIRBRAKE_JS.md).**
 Introduction
 ------------
 
-**DEPRECATION WARNING: Node Airbrake is deprecated in favour of Airbrake JS
-(https://github.com/airbrake/airbrake-js). Please migrate to it as soon as
+**DEPRECATION WARNING: Node Airbrake is deprecated in favour of @airbrake/node
+(https://www.npmjs.com/package/@airbrake/node). Please migrate to it as soon as
 possible.**
 
 _Node Airbrake_ is a Node.js notifier for [Airbrake][airbrake-io], the leading
