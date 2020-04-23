@@ -3,6 +3,9 @@ Node Airbrake Changelog
 
 ### master
 
+### [v2.1.3][v2.1.3] (April 23, 2020)
+* Updated migration guide link
+
 ### [v2.1.2][v2.1.2] (April 23, 2020)
 
 * Updated deprecation notice
@@ -134,3 +137,4 @@ Node Airbrake Changelog
 [v2.1.0]: https://github.com/airbrake/node-airbrake/releases/tag/v2.1.0
 [v2.1.1]: https://github.com/airbrake/node-airbrake/releases/tag/v2.1.1
 [v2.1.2]: https://github.com/airbrake/node-airbrake/releases/tag/v2.1.2
+[v2.1.3]: https://github.com/airbrake/node-airbrake/releases/tag/v2.1.3
